@@ -1,4 +1,7 @@
 import React from "react";
+import Category from "./Category";
+import Products from "./Products";
+
 import Service from "./Service";
 import Slider from "./Slider";
 
@@ -7,6 +10,8 @@ const Home = () => {
     <div>
       {/* <Slider /> */}
       <Service />
+      <Category />
+      <Products />
     </div>
   );
 };

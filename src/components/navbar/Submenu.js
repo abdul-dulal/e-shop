@@ -7,7 +7,7 @@ import { HiMenu } from "react-icons/hi";
 
 const Submenu = () => {
   const [hide, setHide] = useState(true);
-  const [show, setShow] = useState(true);
+  const [show, setShow] = useState(false);
   console.log(show);
 
   const handleHide = () => {
@@ -19,18 +19,19 @@ const Submenu = () => {
   return (
     <div className=" grid grid-cols-2 container lg:hidden md:hidden block ">
       <div className="grid grid-cols-2 relative">
-        <div>
+        <div className="space-y-6">
           <HiMenu className="text-3xl" onClick={handleShow} />
           {show ? (
             <>
-              <ul className=" gap-8">
-                <li className="text-sm font-semibold mt-2 ">
+              <ul className=" gap-8 space-y-6 ">
+                <li className="text-sm font-semibold mt-2 hover:bg-[#7C3AED] p-[10px] ">
                   <NavLink
                     style={({ isActive }) =>
                       isActive
                         ? {
                             padding: "10px",
                             background: "#7C3AED",
+                            width: "100%",
                             color: "white",
                             borderRadius: "4px",
                           }

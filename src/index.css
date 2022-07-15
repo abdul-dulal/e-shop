@@ -9,7 +9,7 @@
 }
 @layer base {
   h1 {
-    @apply text-[#000000] text-2xl;
+    @apply text-[#000000] text-2xl uppercase text-center font-semibold;
   }
 }
 

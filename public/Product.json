@@ -1,0 +1,143 @@
+[
+  {
+    "title": "Lenovo Wireless Headsets Bluetooth",
+    "img": "https://res.cloudinary.com/mhshuvoit/image/upload/v1651643629/ecommerce-app/products/1651643629029-lenovo.jpg.jpg",
+    "price": 10,
+    "price2": 12,
+    "category": "accessories"
+  },
+  {
+    "title": "Uii Sii HM 12",
+    "img": "http://res.cloudinary.com/mhshuvoit/image/upload/v1649414478/ecommerce-app/products/1649414475763-uiisii%20hm%2013.jpg.jpg",
+    "price": 5,
+    "price2": 8,
+    "category": "accessories"
+  },
+  {
+    "title": "Cinthol Soap Lime",
+    "img": "http://res.cloudinary.com/mhshuvoit/image/upload/v1649436699/ecommerce-app/products/1649436696418-soap.jpg.jpg",
+    "price": 7,
+    "price2": 9,
+    "category": "women"
+  },
+  {
+    "titile": "Imagic Waterproof Matte Liquid Lipstick shade",
+    "img": "http://res.cloudinary.com/mhshuvoit/image/upload/v1649436571/ecommerce-app/products/1649436568863-lipstick.jpg.jpg",
+    "price": 2,
+    "price2": 3,
+    "category": "women"
+  },
+  {
+    "titile": "Eye Catching Design And Gorgeous",
+    "img": "http://res.cloudinary.com/mhshuvoit/image/upload/v1649436438/ecommerce-app/products/1649436433381-saree%202.jpg.jpg",
+    "price": 5,
+    "price2": "6",
+    "category": "women"
+  },
+  {
+    "titile": "Red Color Half 12 hand Saree",
+    "img": "http://res.cloudinary.com/mhshuvoit/image/upload/v1649436329/ecommerce-app/products/1649436325561-saree.jpg.jpg",
+    "price": 5,
+    "price2": 6,
+    "category": "women"
+  },
+  {
+    "titile": "Mark plus Chocolate(24 pcs 386 gm big size)",
+    "img": "http://res.cloudinary.com/mhshuvoit/image/upload/v1651487929/ecommerce-app/products/1651487926376-chocolatebar.jpg.jpg",
+    "price": 4,
+    "price2": 6,
+    "category": "food"
+  },
+  {
+    "titile": "Dark Fantasy Choco Fills Biscuit",
+    "img": "http://res.cloudinary.com/mhshuvoit/image/upload/v1649435612/ecommerce-app/products/1649435609540-dark%20fantasy.jpg.jpg",
+    "price": 1,
+    "price2": 3,
+    "category": "food"
+  },
+  {
+    "tittle": "Munchy’s Oat Krunch Dark Chocolate Biscuit",
+    "img": "http://res.cloudinary.com/mhshuvoit/image/upload/v1649435483/ecommerce-app/products/1649435477827-biscuit.jpg.jpg",
+    "price": 3,
+    "price2": 4,
+    "category": "food"
+  },
+  {
+    "titile": "Orion_ Custard Premium Soft cake",
+    "img": "http://res.cloudinary.com/mhshuvoit/image/upload/v1649426483/ecommerce-app/products/1649426479542-cake%202.png.png",
+    "price": 4,
+    "price2": 6,
+    "category": "food"
+  },
+  {
+    "titile": "Chocolate Muffin Cake",
+    "img": "http://res.cloudinary.com/mhshuvoit/image/upload/v1649426375/ecommerce-app/products/1649426371983-cake.jpg.jpg",
+    "price": 3,
+    "price2": 4,
+    "category": "food"
+  },
+
+  {
+    "titile": "SINGER GOOGLE ANDROID TV (S32)",
+    "img": "http://res.cloudinary.com/mhshuvoit/image/upload/v1653351298/ecommerce-app/products/1653351297367-tv.jpg.jpg",
+    "price": 280,
+    "price2": 300,
+    "category": "electronic"
+  },
+  {
+    "titile": "Samsung Convection Microwave Oven",
+    "img": "http://res.cloudinary.com/mhshuvoit/image/upload/v1649414478/ecommerce-app/products/1649414475763-uiisii%20hm%2013.jpg.jpg",
+    "price": 299,
+    "price2": 320,
+    "category": "electronic"
+  },
+  {
+    "titile": "HP 15s-du1115TU Intel CDC N4020",
+    "img": "http://res.cloudinary.com/mhshuvoit/image/upload/v1649414413/ecommerce-app/products/1649414409649-HP%2015s-du1115TU%20Intel%20CDC%20N4020.png.png",
+    "price": 420,
+    "price2": 450,
+    "category": "electronic"
+  },
+  {
+    "titile": "Realme 8",
+    "img": "http://res.cloudinary.com/mhshuvoit/image/upload/v1649414331/ecommerce-app/products/1649414328287-realme8.jpg.jpg",
+    "price": 280,
+    "price2": 300,
+    "category": "electronic"
+  },
+  {
+    "titile": "Realme 9i",
+    "img": "http://res.cloudinary.com/mhshuvoit/image/upload/v1649414270/ecommerce-app/products/1649414267095-realme9i.jpg.jpg",
+    "price": 210,
+    "price2": 220,
+    "category": "electronic"
+  },
+  {
+    "titile": "Zays Leather Premium Half Shoe For Men",
+    "img": "http://res.cloudinary.com/mhshuvoit/image/upload/v1649574623/ecommerce-app/products/1649574620594-shoe2.jpg.jpg",
+    "price": 11,
+    "price2": 14,
+    "category": "men"
+  },
+  {
+    "title": "Classy Sneakers for Men",
+    "img": "http://res.cloudinary.com/mhshuvoit/image/upload/v1649574555/ecommerce-app/products/1649574552473-shoe.jpg.jpg",
+    "price": 4,
+    "price2": 5,
+    "category": "men"
+  },
+  {
+    "titile": "Fashion Premium Casual Shirt",
+    "img": "http://res.cloudinary.com/mhshuvoit/image/upload/v1649574279/ecommerce-app/products/1649574276496-shirt%202.jpg.jpg",
+    "price": 10,
+    "price2": 12,
+    "category": "men"
+  },
+  {
+    "titile": "Fashionable Trendy Good Looking Long Sleeve",
+    "img": "http://res.cloudinary.com/mhshuvoit/image/upload/v1649574156/ecommerce-app/products/1649574154723-shirt.webp.webp",
+    "price": 8,
+    "price2": 10,
+    "category": "men"
+  }
+]
