@@ -8,7 +8,6 @@ import { HiMenu } from "react-icons/hi";
 const Submenu = () => {
   const [hide, setHide] = useState(true);
   const [show, setShow] = useState(false);
-  console.log(show);
 
   const handleHide = () => {
     setHide(!hide);
@@ -109,8 +108,8 @@ const Submenu = () => {
               0
             </p>
           </div>
-          <div class="dropdown dropdown-end">
-            <label tabindex="0" class="">
+          <div className="dropdown dropdown-end">
+            <label tabIndex="0" className="">
               <img
                 src={avatar}
                 onClick={handleHide}

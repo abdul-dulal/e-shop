@@ -78,9 +78,9 @@ const Navbar = () => {
         <div className="">
           <ul className="flex  justify-center gap-7">
             <div className="relative">
-              <li>
+              <Link to={"wishlist"}>
                 <img src={wishlist} className="cursor-pointer" alt="" />
-              </li>
+              </Link>
               <p className="absolute bottom-5 left-5  bg-gray-900 text-gray-100 w-5 h-5 rounded-full flex items-center justify-center">
                 0
               </p>
@@ -93,12 +93,12 @@ const Navbar = () => {
                 0
               </p>
             </div>
-            <div class="dropdown dropdown-end">
-              <label tabindex="0" class="">
+            <div class="dropdown dropdown-end ">
+              <label tabIndex="0" class="">
                 <img
                   src={avatar}
                   onClick={handleHide}
-                  className="w-8 h8 cursor-pointer"
+                  className="w-8 h-8  cursor-pointer"
                   alt=""
                 />
               </label>

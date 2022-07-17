@@ -1,9 +1,11 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
+import Newarrival from "./Newarrival";
 import Productcard from "./Productcard";
+import Toprated from "./Toprated";
 
 const Products = () => {
   const [showProduct, setShowproduct] = useState("best");
-  console.log(showProduct);
+
   return (
     <div>
       <div className="mt-20">
@@ -35,9 +37,9 @@ const Products = () => {
           New Arrival
         </button>
       </div>
-      {showProduct === "best" && <Productcard title="best seling" />}
-      {showProduct === "new" && <Productcard title="new arrival" />}
-      {showProduct === "top" && <Productcard title="top ratet" />}
+      {showProduct === "best" && <Productcard />}
+      {showProduct === "top" && <Toprated />}
+      {showProduct === "new" && <Newarrival />}
     </div>
   );
 };

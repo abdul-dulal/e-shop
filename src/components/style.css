@@ -1,0 +1,14 @@
+.parent {
+  position: relative;
+}
+.parent:hover .accessories {
+  opacity: 1;
+  bottom: 108px;
+}
+.accessories {
+  transition: 2s;
+  position: absolute;
+  left: 0;
+  bottom: -50px;
+  opacity: 0;
+}

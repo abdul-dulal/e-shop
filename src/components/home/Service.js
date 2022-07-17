@@ -18,7 +18,7 @@ const Service = () => {
         <img src={support} alt="" />
         <div className="ml-4">
           <h2 className="text-xl font-bold">Support 24/7</h2>
-          <p>Contact us 24 hours a day, 7 days a week</p>
+          <p>Contact us 24 hours a day, 7 days a </p>
         </div>
       </div>
       <div className="flex ">

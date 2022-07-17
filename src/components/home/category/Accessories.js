@@ -1,25 +1,29 @@
 import React, { useEffect, useState } from "react";
-import Breadcumb from "../../shere/Breadcumb";
-import Hover from "../../shere/Hover";
 import Loading from "../../shere/Loading";
-const WomenFashion = () => {
-  const [wFashion, setwFashion] = useState([]);
+import Hover from "../../../components/shere/Hover";
+import "../../style.css";
+import Breadcumb from "../../shere/Breadcumb";
+import Wishlist from "../../wishlit/Wishlist";
+
+const Accessories = () => {
+  const [accessories, setAccessories] = useState([]);
   const [loading, setLoading] = useState(false);
+
   useEffect(() => {
-    fetch(`http://localhost:4000/get-womenfashion?category=women`)
+    fetch("http://localhost:4000/get-accessories?category=accessories")
       .then((res) => res.json())
       .then((data) => {
-        setwFashion(data);
+        setAccessories(data);
         setLoading(true);
       });
   }, []);
   return (
-    <div>
+    <div className="lg:h-screen">
       <Breadcumb />
       {loading ? (
         <>
-          <div className="flex lg:justify-between justify-center gap-8 flex-wrap container mt-10  overflow-hidden ">
-            {wFashion.map((e) => (
+          <div className="flex lg:justify-between gap-8 flex-wrap justify-center container mt-10  overflow-hidden ">
+            {accessories.map((e) => (
               <div className="parent ">
                 <div class=" rounded-md bg-base-100 shadow-xl w-64 h-96 border-2">
                   <img
@@ -37,6 +41,7 @@ const WomenFashion = () => {
                       <p className="line-through">${e.price2}</p>
                     </div>
                     <Hover data={e} />
+
                     <div className="flex">
                       <span
                         class
@@ -112,4 +117,4 @@ const WomenFashion = () => {
   );
 };
 
-export default WomenFashion;
+export default Accessories;

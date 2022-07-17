@@ -5,6 +5,7 @@ import Shop from "./components/shop/Shop";
 import Contact from "./components/contact/Contact";
 import Footer from "./components/footer/Footer";
 import { PublicRoute } from "./components/routes/PublicRoute";
+import Wishlist from "./components/wishlit/Wishlist";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
         {PublicRoute.map(({ path, Component }) => (
           <Route path={path} element={<Component />} key={Math.random()} />
         ))}
+        <Route path="/wishlist" element={<Wishlist />} />
       </Routes>
       <Footer />
     </div>
