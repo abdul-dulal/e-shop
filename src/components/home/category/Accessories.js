@@ -3,7 +3,7 @@ import Loading from "../../shere/Loading";
 import Hover from "../../../components/shere/Hover";
 import "../../style.css";
 import Breadcumb from "../../shere/Breadcumb";
-import Wishlist from "../../wishlit/Wishlist";
+import Wishlist from "../../wishlist/Wishlist";
 
 const Accessories = () => {
   const [accessories, setAccessories] = useState([]);

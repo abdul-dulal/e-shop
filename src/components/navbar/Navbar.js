@@ -4,12 +4,22 @@ import wishlist from "../../assets/icon/wishlist.png";
 import cart from "../../assets/icon/cart.png";
 import avatar from "../../assets/icon/avatar.a296afc6.png";
 import Submenu from "./Submenu";
+import Cartmodal from "../cart/Cartmodal";
+import useWishlist from "../hooks/useWishlist";
+import WishlistData from "../hooks/useCart";
+// import useCart from "../hooks/useCart";
+
 const Navbar = () => {
   const [hide, setHide] = useState(true);
+  const [cartmodal, setCartmodal] = useState(false);
+
+  const { wishlistInfo, refetch } = useWishlist();
+  const { cartInfo } = WishlistData();
 
   const handleHide = () => {
     setHide(!hide);
   };
+
   return (
     <nav>
       <div className="flex container justify-between items-center lg:h-16 md:h-16 h-6 invisible md:visible lg:visible  ">
@@ -81,16 +91,27 @@ const Navbar = () => {
               <Link to={"wishlist"}>
                 <img src={wishlist} className="cursor-pointer" alt="" />
               </Link>
-              <p className="absolute bottom-5 left-5  bg-gray-900 text-gray-100 w-5 h-5 rounded-full flex items-center justify-center">
-                0
+              <p
+                className="absolute bottom-5 left-5  bg-gray-900 text-gray-100 w-5 h-5 rounded-full flex items-center justify-center"
+                refetch
+              >
+                {wishlistInfo ? wishlistInfo.length : "0"}
               </p>
             </div>
             <div className="relative">
               <li>
-                <img src={cart} className="cursor-pointer" alt="" />
+                <img
+                  onClick={() => setCartmodal(!cartmodal)}
+                  src={cart}
+                  className="cursor-pointer"
+                  alt=""
+                />
               </li>
-              <p className="absolute bottom-5 left-4  bg-gray-900 text-gray-100 w-5 h-5 rounded-full flex items-center justify-center">
-                0
+              <p
+                className="absolute bottom-5 left-4  bg-gray-900 text-gray-100 w-5 h-5 rounded-full flex items-center justify-center"
+                refetch
+              >
+                {cartInfo ? cartInfo.length : "0"}
               </p>
             </div>
             <div class="dropdown dropdown-end ">
@@ -123,6 +144,7 @@ const Navbar = () => {
           </ul>
         </div>
       </div>
+      <Cartmodal cartmodal={cartmodal} />
       <Submenu />
     </nav>
   );

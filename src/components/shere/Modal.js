@@ -6,12 +6,7 @@ import { ImLinkedin2 } from "react-icons/im";
 
 const Modal = ({ popup, setPopup, data }) => {
   const [increment, setIncrement] = useState(1);
-  const handleIncrement = () => {
-    setIncrement((prevCount) => prevCount + 1);
-  };
-  const handleDecrement = () => {
-    setIncrement((prevCount) => prevCount - 1);
-  };
+
   return (
     <div>
       {popup ? (
@@ -67,7 +62,7 @@ const Modal = ({ popup, setPopup, data }) => {
                       <div className="space-x-4 text-xl font-bold text-[#6B7280] border-2 h-10    w-28  flex items-center justify-center">
                         <button
                           disabled={increment <= 1}
-                          onClick={handleDecrement}
+                          onClick={() => setIncrement(increment - 1)}
                           className="cursor-pointer"
                         >
                           -
@@ -75,7 +70,7 @@ const Modal = ({ popup, setPopup, data }) => {
                         <span className="text-xl">{increment}</span>
                         <button
                           disabled={increment >= 10}
-                          onClick={handleIncrement}
+                          onClick={() => setIncrement(increment + 1)}
                           className="cursor-pointer"
                         >
                           +
