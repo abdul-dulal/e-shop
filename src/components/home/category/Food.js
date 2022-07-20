@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import Breadcumb from "../../shere/Breadcumb";
 import Hover from "../../shere/Hover";
 import Loading from "../../shere/Loading";
 
@@ -17,7 +16,6 @@ const Food = () => {
   }, []);
   return (
     <div>
-      <Breadcumb />
       {loading ? (
         <>
           <div className="flex lg:justify-between justify-center gap-8 flex-wrap  container mt-10  overflow-hidden ">

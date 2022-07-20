@@ -31,7 +31,7 @@ const WishlistTable = ({ data }) => {
       <td>
         <button
           onClick={() => navigate(`/product-details/${_id}`)}
-          className="uppercase bg-purple-600 h-10 w-40 rounded-full text-sm text-white hover:bg-black"
+          className="uppercase bg-purple-600 h-10 w-40 rounded-full text-sm text-white hover:bg-gray-700"
         >
           Select option
         </button>

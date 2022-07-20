@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import Breadcumb from "../../shere/Breadcumb";
+
 import Hover from "../../shere/Hover";
 import Loading from "../../shere/Loading";
 
@@ -17,7 +17,6 @@ const MenFashion = () => {
   }, []);
   return (
     <div>
-      <Breadcumb />
       {loading ? (
         <>
           <div className="flex lg:justify-between gap-8 flex-wrap justify-center container mt-10  overflow-hidden ">

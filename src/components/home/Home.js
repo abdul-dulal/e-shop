@@ -4,6 +4,7 @@ import Products from "./Products";
 
 import Service from "./Service";
 import Slider from "./Slider";
+import Vendor from "./vendor/Vendor";
 
 const Home = () => {
   return (
@@ -12,6 +13,7 @@ const Home = () => {
       <Service />
       <Category />
       <Products />
+      <Vendor />
     </div>
   );
 };

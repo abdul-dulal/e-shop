@@ -2,8 +2,8 @@ import React from "react";
 import Hover from "../shere/Hover";
 import Loading from "../shere/Loading";
 
-const Productdetails = ({ data, loading }) => {
-  const { img, title, price, price2 } = data;
+const Productdetails = ({ value, loading }) => {
+  const { img, title, price, price2 } = value;
 
   return (
     <div>
@@ -21,7 +21,7 @@ const Productdetails = ({ data, loading }) => {
                   <span>-</span>
                   <p className="line-through">${price2}</p>
                 </div>
-                <Hover data={data} />
+                <Hover data={value} />
 
                 <div className="flex">
                   <span

@@ -3,7 +3,6 @@ import Loading from "../../shere/Loading";
 import Hover from "../../../components/shere/Hover";
 import "../../style.css";
 import Breadcumb from "../../shere/Breadcumb";
-import Wishlist from "../../wishlist/Wishlist";
 
 const Accessories = () => {
   const [accessories, setAccessories] = useState([]);
@@ -18,8 +17,7 @@ const Accessories = () => {
       });
   }, []);
   return (
-    <div className="lg:h-screen">
-      <Breadcumb />
+    <div className="">
       {loading ? (
         <>
           <div className="flex lg:justify-between gap-8 flex-wrap justify-center container mt-10  overflow-hidden ">

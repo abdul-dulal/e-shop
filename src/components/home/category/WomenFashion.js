@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import Breadcumb from "../../shere/Breadcumb";
 import Hover from "../../shere/Hover";
 import Loading from "../../shere/Loading";
 const WomenFashion = () => {
@@ -15,10 +14,9 @@ const WomenFashion = () => {
   }, []);
   return (
     <div>
-      <Breadcumb />
       {loading ? (
         <>
-          <div className="flex lg:justify-between justify-center gap-8 flex-wrap container mt-10  overflow-hidden ">
+          <div className="flex lg:justify-between justify-center gap-8 flex-wrap container lg:mt-10  overflow-hidden ">
             {wFashion.map((e) => (
               <div className="parent ">
                 <div class=" rounded-md bg-base-100 shadow-xl w-64 h-96 border-2">
