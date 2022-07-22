@@ -1,8 +1,13 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
+import { useQuery } from "react-query";
+import Loading from "../shere/Loading";
+import Moreproduct from "./Moreproduct";
+import Review from "./Review";
 import Vedorview from "./Vedorview";
 
-const VendorInfo = () => {
+const VendorInfo = ({ data }) => {
   const [showdata, setShowdata] = useState("vendor");
+
   return (
     <div className="container">
       <div className="flex justify-center space-x-4 mt-10 ">
@@ -33,9 +38,9 @@ const VendorInfo = () => {
       </div>
       <p className=" border-solid border bg-gray-100 my-5"></p>
 
-      {showdata === "vendor" && <Vedorview title="vendor" />}
-      {showdata === "review" && <Vedorview title="reviews" />}
-      {showdata === "more" && <Vedorview title="more product" />}
+      {showdata === "vendor" && <Vedorview data={data} />}
+      {showdata === "review" && <Review />}
+      {showdata === "more" && <Moreproduct category={data.category} />}
     </div>
   );
 };

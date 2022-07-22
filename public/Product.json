@@ -5,7 +5,9 @@
     "price": 10,
     "price2": 12,
     "category": "accessories",
-    "highlights": "best"
+    "highlights": "best",
+    "vendorName": "e-mall-shop",
+    "author": "Abdul Dulal"
   },
   {
     "title": "Uii Sii HM 12",
@@ -13,7 +15,9 @@
     "price": 5,
     "price2": 8,
     "category": "accessories",
-    "highlights": "best"
+    "highlights": "best",
+    "vendorName": "e-mall-shop",
+    "author": "Abdul Dulal"
   },
   {
     "title": "Cinthol Soap Lime",
@@ -21,7 +25,9 @@
     "price": 7,
     "price2": 9,
     "category": "women",
-    "highlights": "best"
+    "highlights": "best",
+    "vendorName": "Grirls Shop",
+    "author": "Nafi"
   },
   {
     "title": "Imagic Waterproof Matte Liquid Lipstick shade",
@@ -29,7 +35,9 @@
     "price": 2,
     "price2": 3,
     "category": "women",
-    "highlights": "best"
+    "highlights": "best",
+    "vendorName": "Grirls Shop",
+    "author": "Nafi"
   },
   {
     "title": "Eye Catching Design And Gorgeous",
@@ -37,7 +45,9 @@
     "price": 5,
     "price2": "6",
     "category": "women",
-    "highlights": "best"
+    "highlights": "best",
+    "vendorName": "Grirls Shop",
+    "author": "Nafi"
   },
   {
     "title": "Red Color Half 12 hand Saree",
@@ -45,7 +55,9 @@
     "price": 5,
     "price2": 6,
     "category": "women",
-    "highlights": "best"
+    "highlights": "best",
+    "vendorName": "Grirls Shop",
+    "author": "Nafi"
   },
   {
     "title": "Mark plus Chocolate(24 pcs 386 gm big size)",
@@ -53,7 +65,9 @@
     "price": 4,
     "price2": 6,
     "category": "food",
-    "highlights": "best"
+    "highlights": "best",
+    "vendorName": "Food Zone",
+    "author": "Imtiaz"
   },
   {
     "title": "Dark Fantasy Choco Fills Biscuit",
@@ -61,7 +75,9 @@
     "price": 1,
     "price2": 3,
     "category": "food",
-    "highlights": "best"
+    "highlights": "best",
+    "vendorName": "Food Zone",
+    "author": "Imtiaz"
   },
   {
     "tittle": "Munchy’s Oat Krunch Dark Chocolate Biscuit",
@@ -69,7 +85,9 @@
     "price": 3,
     "price2": 4,
     "category": "food",
-    "highlights": "top"
+    "highlights": "top",
+    "vendorName": "Food Zone",
+    "author": "Imtiaz"
   },
   {
     "title": "Orion_ Custard Premium Soft cake",
@@ -77,7 +95,9 @@
     "price": 4,
     "price2": 6,
     "category": "food",
-    "highlights": "top"
+    "highlights": "top",
+    "vendorName": "Food Zone",
+    "author": "Imtiaz"
   },
   {
     "title": "Chocolate Muffin Cake",
@@ -85,7 +105,9 @@
     "price": 3,
     "price2": 4,
     "category": "food",
-    "highlights": "top"
+    "highlights": "top",
+    "vendorName": "Food Zone",
+    "author": "Imtiaz"
   },
 
   {
@@ -94,7 +116,9 @@
     "price": 280,
     "price2": 300,
     "category": "electronic",
-    "highlights": "top"
+    "highlights": "top",
+    "vendorName": "e-mall-shop",
+    "author": "Abdul Dulal"
   },
   {
     "title": "Samsung Convection Microwave Oven",
@@ -102,7 +126,9 @@
     "price": 299,
     "price2": 320,
     "category": "electronic",
-    "highlights": "top"
+    "highlights": "top",
+    "vendorName": "e-mall-shop",
+    "author": "Abdul Dulal"
   },
   {
     "title": "HP 15s-du1115TU Intel CDC N4020",
@@ -110,7 +136,9 @@
     "price": 420,
     "price2": 450,
     "category": "electronic",
-    "highlights": "top"
+    "highlights": "top",
+    "vendorName": "e-mall-shop",
+    "author": "Abdul Dulal"
   },
   {
     "title": "Realme 8",
@@ -118,7 +146,9 @@
     "price": 280,
     "price2": 300,
     "category": "electronic",
-    "highlights": "top"
+    "highlights": "top",
+    "vendorName": "e-mall-shop",
+    "author": "Abdul Dulal"
   },
   {
     "title": "Realme 9i",
@@ -126,7 +156,9 @@
     "price": 210,
     "price2": 220,
     "category": "electronic",
-    "highlights": "top"
+    "highlights": "top",
+    "vendorName": "e-mall-shop",
+    "author": "Abdul Dulal"
   },
   {
     "title": "Zays Leather Premium Half Shoe For Men",
@@ -134,7 +166,9 @@
     "price": 11,
     "price2": 14,
     "category": "men",
-    "highlights": "new"
+    "highlights": "new",
+    "vendorName": "Fashion Shop",
+    "author": "Abdullah"
   },
   {
     "title": "Classy Sneakers for Men",
@@ -142,7 +176,9 @@
     "price": 4,
     "price2": 5,
     "category": "men",
-    "highlights": "new"
+    "highlights": "new",
+    "vendorName": "Fashion Shop",
+    "author": "Abdullah"
   },
   {
     "title": "Fashion Premium Casual Shirt",
@@ -150,7 +186,9 @@
     "price": 10,
     "price2": 12,
     "category": "men",
-    "highlights": "new"
+    "highlights": "new",
+    "vendorName": "Fashion Shop",
+    "author": "Abdullah"
   },
   {
     "title": "Fashionable Trendy Good Looking Long Sleeve",
@@ -158,7 +196,9 @@
     "price": 8,
     "price2": 10,
     "category": "men",
-    "highlights": "new"
+    "highlights": "new",
+    "vendorName": "Fashion Shop",
+    "author": "Abdullah"
   },
   {
     "title": "Eye Catching Design And Gorgeous",
@@ -166,7 +206,9 @@
     "price": 5,
     "price2": "6",
     "category": "women",
-    "highlights": "new"
+    "highlights": "new",
+    "vendorName": "Grirls Shop",
+    "author": "Nafi"
   },
   {
     "title": "Realme 9i",
@@ -174,6 +216,8 @@
     "price": 210,
     "price2": 220,
     "category": "electronic",
-    "highlights": "new"
+    "highlights": "new",
+    "vendorName": "e-mall-shop",
+    "author": "Abdul Dulal"
   }
 ]

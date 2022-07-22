@@ -14,5 +14,9 @@
   {
     "name": "Fashion Shop",
     "img": "http://res.cloudinary.com/mhshuvoit/image/upload/v1649572823/ecommerce-app/venodr-images/1649572820815-shirts.png.png"
-  }
+  },
+  { "name": "Ganja Shop", "img": "" },
+  { "name": "test", "img": "" },
+  { "name": "Electronic", "img": "" },
+  { "name": "Tshirt", "img": "" }
 ]

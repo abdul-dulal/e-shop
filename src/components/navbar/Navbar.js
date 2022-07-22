@@ -7,13 +7,15 @@ import Submenu from "./Submenu";
 import Cartmodal from "../cart/Cartmodal";
 import useWishlist from "../hooks/useWishlist";
 import WishlistData from "../hooks/useCart";
-// import useCart from "../hooks/useCart";
+import { useAuthState } from "react-firebase-hooks/auth";
+import auth from "../../Firebase.init";
+import Logout from "../login/Logout";
 
 const Navbar = () => {
   const [hide, setHide] = useState(true);
   const [cartmodal, setCartmodal] = useState(false);
-
-  const { wishlistInfo, refetch } = useWishlist();
+  const [user] = useAuthState(auth);
+  const { wishlistInfo } = useWishlist();
   const { cartInfo } = WishlistData();
 
   const handleHide = () => {
@@ -132,11 +134,20 @@ const Navbar = () => {
                     class="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-52"
                   >
                     <li>
-                      <a>Item 1</a>
+                      <Link to={"/account"}>My Account</Link>
                     </li>
-                    <li>
-                      <a>Item 2</a>
-                    </li>
+                    {user ? (
+                      <Logout />
+                    ) : (
+                      <>
+                        <li>
+                          <Link to={"/register"}>Register</Link>
+                        </li>
+                        <li>
+                          <Link to={"/login"}>Login</Link>
+                        </li>
+                      </>
+                    )}
                   </ul>
                 </>
               )}

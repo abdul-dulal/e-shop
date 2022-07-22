@@ -7,7 +7,7 @@ import cart from "../../assets/icon/wishlist.png";
 import VendorInfo from "./VendorInfo";
 const Details = () => {
   const [data, setData] = useState([]);
-  console.log(data.name);
+
   const [increment, setIncrement] = useState(1);
   const { id } = useParams();
 
@@ -89,7 +89,7 @@ const Details = () => {
         </div>
       </div>
 
-      <VendorInfo />
+      <VendorInfo data={data} />
     </div>
   );
 };

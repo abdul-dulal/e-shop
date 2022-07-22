@@ -3,8 +3,6 @@ import { useQuery } from "react-query";
 import Loading from "../shere/Loading";
 
 const WishlistData = () => {
-  // const [cartInfo, setcartInfo] = useState([]);
-
   const {
     isLoading,
     data: cartInfo,

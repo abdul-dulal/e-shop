@@ -18,6 +18,9 @@ const Hover = ({ data }) => {
       img: data.img,
       price: data.price,
       price2: data.price2,
+      vendorName: data.vendorName,
+      author: data.author,
+      category: data.category,
     };
     fetch("http://localhost:4000/post-wishlist", {
       method: "POST",
