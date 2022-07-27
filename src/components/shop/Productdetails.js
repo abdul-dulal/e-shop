@@ -1,6 +1,5 @@
 import React from "react";
 import Hover from "../shere/Hover";
-import Loading from "../shere/Loading";
 
 const Productdetails = ({ value, loading }) => {
   const { img, title, price, price2 } = value;

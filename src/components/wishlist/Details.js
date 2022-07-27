@@ -5,6 +5,7 @@ import { AiOutlineTwitter } from "react-icons/ai";
 import { ImLinkedin2 } from "react-icons/im";
 import cart from "../../assets/icon/wishlist.png";
 import VendorInfo from "./VendorInfo";
+import Breadcumb from "../shere/Breadcumb";
 const Details = () => {
   const [data, setData] = useState([]);
 
@@ -18,7 +19,8 @@ const Details = () => {
   }, [id]);
   return (
     <div>
-      <div className="grid grid-cols-2 gap-6 container py-10 ">
+      <Breadcumb tag="Shop-Product" />
+      <div className="grid lg:grid-cols-2 md:grid-cols-2  gap-6  container py-10 ">
         <div>
           <img
             src={data?.img}
@@ -26,26 +28,20 @@ const Details = () => {
             alt=""
           />
         </div>
-        <div>
-          <h2 className="text-2xl text-[#6B7280] mb-2 ">{data.title}</h2>
+
+        <div className="lg:ml-0 md:ml-0 ml-10">
+          <h2 className="text-2xl mb-2 ">{data.name}</h2>
           <div className="flex gap-2 text-2xl text-[#6B7280]">
             <p>${data.price}</p>
             <span>-</span>
             <p className="line-through">${data.price2}</p>
           </div>
           <p className="mb-5">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis,
-            deserunt amet officiis minima, distinctio nulla excepturi aliquam
-            dolorum deleniti doloribus nisi maxime! Enim blanditiis nemo
-            repellat sint rem obcaecati tenetur maxime quisquam amet? In
-            molestiae iusto minus neque aliquam. Illum reiciendis velit nostrum
-            laborum nemo! Debitis nemo maiores odit ullam voluptatibus ut soluta
-            accusamus cupiditate, placeat doloribus exercitationem officia
-            voluptatum officiis quo at dicta voluptas eos repellendus tempore
-            molestias repellat consequuntur. Alias aliquid, est quas hic
-            sapiente dolores dolorem, ea corrupti fuga voluptas esse nostrum
-            accusamus porro dolorum. Minus eaque in recusandae facilis totam id,
-            tenetur dolore eos at inventore.
+            Chocolate is a food product made from roasted and ground cacao pods,
+            that is available as a liquid, solid or paste, on its own or as a
+            flavoring agent in other foods. Chocolate is a food product made
+            from roasted and ground cacao pods, that is available as a liquid,
+            solid or paste, on its own or as a flavoring agent in other foods
           </p>
           <p className="border-solid border-2 bg-gray-100 my-10"></p>
           <div className="flex gap-6 items-center ">
@@ -74,7 +70,9 @@ const Details = () => {
             </div>
           </div>
           <p className=" mt-4">Category: {data.category}</p>
-          <p className="mb-8">Tags: set korte hbe</p>
+          <p className="mb-8 ">
+            Tags: <span className="font-semibold">{data.tags}</span>
+          </p>
 
           <div className="flex gap-7 ">
             <FaFacebookF className="text-3xl bg-[#3B5998] text-white rounded-full p-1" />
@@ -84,7 +82,7 @@ const Details = () => {
           <p className="border-solid border-2 bg-gray-100 my-10"></p>
           <div>
             <p>Sold by</p>
-            <p className="mb-10">e-shop Mall</p>
+            <p className="mb-10 text-xl font-semibold">{data.vendorName}</p>
           </div>
         </div>
       </div>

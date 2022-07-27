@@ -6,6 +6,7 @@ import Loading from "../../components/shere/Loading";
 import {
   useSignInWithEmailAndPassword,
   useSignInWithGoogle,
+  useSignInWithFacebook,
 } from "react-firebase-hooks/auth";
 import auth from "../../Firebase.init";
 import { toast } from "react-toastify";
@@ -19,10 +20,11 @@ const Login = () => {
   } = useForm();
 
   let errorElement = "";
-
   const [signInWithEmailAndPassword, user, loading, error] =
     useSignInWithEmailAndPassword(auth);
   const [signInWithGoogle, gUser, gLoading, gError] = useSignInWithGoogle(auth);
+  const [signInWithFacebook, fUser, FLoading, fError] =
+    useSignInWithFacebook(auth);
   const navigate = useNavigate();
 
   if (error) {
@@ -31,7 +33,7 @@ const Login = () => {
   const onSubmit = (data) => {
     signInWithEmailAndPassword(data.email, data.password);
   };
-  if (user) {
+  if (user || gUser || fUser) {
     return navigate("/");
   }
 
@@ -41,7 +43,7 @@ const Login = () => {
 
   return (
     <div className="">
-      <Breadcumb />
+      <Breadcumb tag="Login" />
       <div className="text-center text-2xl font-bold text-purple-600 py-8 space-x-2">
         <button onClick={() => navigate("/register")}>Register</button>
         <span>|</span>
@@ -150,7 +152,7 @@ const Login = () => {
           </form>
         </div>
 
-        <div className=" lg:ml-[520px]">
+        <div className=" lg:ml-[520px] md:ml-[185px] ml-8">
           <button
             onClick={() => signInWithGoogle()}
             className="flex justify-center items-center  text-black bg-white shadow-lg border-2  uppercase h-14 input input-bordered input-accent w-full max-w-xs"
@@ -158,7 +160,10 @@ const Login = () => {
             <FcGoogle className="text-3xl" />
             <span className="ml-4 font-semibold">google</span>
           </button>
-          <button className="flex justify-center items-center  text-black bg-white shadow-lg border-2  uppercase h-14 input input-bordered input-accent w-full max-w-xs mt-3">
+          <button
+            onClick={() => signInWithFacebook()}
+            className="flex justify-center items-center  text-black bg-white shadow-lg border-2  uppercase h-14 input input-bordered input-accent w-full max-w-xs mt-3"
+          >
             <FaFacebookF className="text-3xl text-[#3A559F]" />{" "}
             <span className="ml-4 font-semibold">facebook</span>
           </button>

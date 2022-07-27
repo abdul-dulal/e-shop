@@ -4,13 +4,18 @@ import Breadcumb from "../shere/Breadcumb";
 import { useNavigate } from "react-router-dom";
 import ReCAPTCHA from "react-google-recaptcha";
 import Loading from "../../components/shere/Loading";
-import { useCreateUserWithEmailAndPassword } from "react-firebase-hooks/auth";
+import {
+  useCreateUserWithEmailAndPassword,
+  useAuthState,
+} from "react-firebase-hooks/auth";
 import auth from "../../Firebase.init";
-import { toast } from "react-toastify";
+
 const Register = () => {
   const [agree, setAgree] = useState(false);
   const [verified, setVerified] = useState(false);
-  console.log(agree);
+  const [customer, setcustomer] = useState("customer");
+  const [vendor, setvendor] = useState("customer");
+  console.log(vendor);
   const {
     register,
     handleSubmit,
@@ -18,15 +23,35 @@ const Register = () => {
     reset,
   } = useForm();
 
-  const [createUserWithEmailAndPassword, user, loading, error] =
-    useCreateUserWithEmailAndPassword(auth);
+  const [user] = useAuthState(auth);
+  const [createUserWithEmailAndPassword, luser, loading] =
+    useCreateUserWithEmailAndPassword(auth, { sendEmailVerification: true });
   const navigate = useNavigate();
-
   const onSubmit = async (data) => {
     createUserWithEmailAndPassword(data.email, data.password);
     reset();
+    if (vendor === "vendor") {
+      const newUser = {
+        img: "",
+        status: vendor,
+        name: data.store,
+      };
+      fetch("http://localhost:4000/customer", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(newUser),
+      })
+        .then((response) => response.json())
+        .then((data) => {
+          console.log("Success:", data);
+        });
+    }
   };
-  if (user) {
+
+  if (luser) {
+    console.log(user);
     return navigate("/");
   }
 
@@ -36,6 +61,7 @@ const Register = () => {
   const hadleCapctha = () => {
     setVerified(true);
   };
+
   return (
     <div className="h-screen">
       <Breadcumb />
@@ -129,8 +155,21 @@ const Register = () => {
               </span>
             )}
           </label>
-
           <br />
+          {customer ? (
+            ""
+          ) : (
+            <p>
+              <label className="block">Store Name</label>
+
+              <input
+                {...register("store")}
+                type="text"
+                placeholder="Enter Store Name"
+                className="border-2 border-gray-400 w-80 h-12 px-3  my-2 placeholder:text-purple-400 bg-white rounded-md focus:ring"
+              />
+            </p>
+          )}
           <div className="my-4">
             <p className="my-4">RECAPTCHA</p>
             <ReCAPTCHA
@@ -138,6 +177,23 @@ const Register = () => {
               onChange={hadleCapctha}
             />
           </div>
+          <label className="block cursor-pointer">
+            <input
+              type="radio"
+              onClick={() => [setcustomer(true), setvendor("customer")]}
+              checked={customer}
+            />
+            <span className="ml-3">I am a customer</span>
+          </label>
+          <label className="block">
+            <input
+              type="radio"
+              onClick={() => [setcustomer(!customer), setvendor("vendor")]}
+              checked={!customer}
+            />
+
+            <span className="ml-3">I am a vendor</span>
+          </label>
           <label>
             <input
               type="checkbox"

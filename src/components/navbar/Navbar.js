@@ -93,10 +93,7 @@ const Navbar = () => {
               <Link to={"wishlist"}>
                 <img src={wishlist} className="cursor-pointer" alt="" />
               </Link>
-              <p
-                className="absolute bottom-5 left-5  bg-gray-900 text-gray-100 w-5 h-5 rounded-full flex items-center justify-center"
-                refetch
-              >
+              <p className="absolute bottom-5 left-5  bg-gray-900 text-gray-100 w-5 h-5 rounded-full flex items-center justify-center">
                 {wishlistInfo ? wishlistInfo.length : "0"}
               </p>
             </div>
@@ -109,21 +106,27 @@ const Navbar = () => {
                   alt=""
                 />
               </li>
-              <p
-                className="absolute bottom-5 left-4  bg-gray-900 text-gray-100 w-5 h-5 rounded-full flex items-center justify-center"
-                refetch
-              >
+              <p className="absolute bottom-5 left-4  bg-gray-900 text-gray-100 w-5 h-5 rounded-full flex items-center justify-center">
                 {cartInfo ? cartInfo.length : "0"}
               </p>
             </div>
             <div class="dropdown dropdown-end ">
               <label tabIndex="0" class="">
-                <img
-                  src={avatar}
-                  onClick={handleHide}
-                  className="w-8 h-8  cursor-pointer"
-                  alt=""
-                />
+                {user ? (
+                  <img
+                    src={user.photoURL}
+                    onClick={handleHide}
+                    className="w-8 h-8 rounded-full cursor-pointer"
+                    alt=""
+                  />
+                ) : (
+                  <img
+                    src={avatar}
+                    onClick={handleHide}
+                    className="w-8 h-8  cursor-pointer"
+                    alt=""
+                  />
+                )}
               </label>
               {hide ? (
                 ""
@@ -134,7 +137,7 @@ const Navbar = () => {
                     class="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-52"
                   >
                     <li>
-                      <Link to={"/account"}>My Account</Link>
+                      <Link to={"/my-account"}>My Account</Link>
                     </li>
                     {user ? (
                       <Logout />

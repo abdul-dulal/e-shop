@@ -6,24 +6,14 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/scrollbar";
 import "swiper/css/autoplay";
-import { useEffect, useState } from "react";
+import React from "react";
 import { useNavigate } from "react-router-dom";
+import useVendor from "../../hooks/useVendor";
 
-const Vendor = () => {
-  const [vendors, setVendors] = useState([]);
-  const [loading, setLoading] = useState(false);
+const Vendorslider = () => {
   const navigate = useNavigate();
-  const handle = () => {};
 
-  useEffect(() => {
-    fetch("http://localhost:4000/vendors")
-      .then((res) => res.json())
-      .then((data) => {
-        setVendors(data);
-        setLoading(true);
-      });
-  }, []);
-
+  const { vendors, loading } = useVendor();
   return (
     <div className="container mt-20">
       <h1 className="mb-10">Our Vendors</h1>
@@ -45,4 +35,4 @@ const Vendor = () => {
   );
 };
 
-export default Vendor;
+export default Vendorslider;

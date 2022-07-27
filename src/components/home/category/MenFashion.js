@@ -25,7 +25,7 @@ const MenFashion = () => {
                 <div class=" rounded-md bg-base-100 shadow-xl w-64 h-96 border-2">
                   <img
                     src={fashion.img}
-                    className="  h-60 pt-3 ml-3 rounded-lg"
+                    className="  h-60 w-11/12 pt-3 ml-3 rounded-lg"
                     alt=""
                   />
 

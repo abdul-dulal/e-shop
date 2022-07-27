@@ -1,3 +1,5 @@
+import Cart from "../cart/Cart";
+import Contact from "../contact/Contact";
 import Accessories from "../home/category/Accessories";
 import Clening from "../home/category/Clening";
 import Cooking from "../home/category/Cooking";
@@ -10,8 +12,21 @@ import MenFashion from "../home/category/MenFashion";
 import Sports from "../home/category/Sports";
 import Toys from "../home/category/Toys";
 import WomenFashion from "../home/category/WomenFashion";
+import Home from "../home/Home";
+import Login from "../login/Login";
+import Register from "../register/Register";
+import Shop from "../shop/Shop";
+import Wishlist from "../wishlist/Wishlist";
 
 export const PublicRoute = [
+  { path: "/", name: "home", Component: Home },
+  { path: "/shop", name: "shop", Component: Shop },
+  { path: "/shop", name: "shop", Component: Shop },
+  { path: "/contact", name: "contact", Component: Contact },
+  { path: "/register", name: "register", Component: Register },
+  { path: "/login", name: "login", Component: Login },
+  { path: "/wishlist", name: "wishlist", Component: Wishlist },
+  { path: "/cart", name: "cart", Component: Cart },
   { path: "category/eletronic", name: "electronic", Component: Accessories },
   { path: "category/clening", name: "clening", Component: Clening },
   { path: "category/cooking", name: "cooking", Component: Cooking },

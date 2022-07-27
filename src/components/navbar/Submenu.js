@@ -4,11 +4,21 @@ import wishlist from "../../assets/icon/wishlist.png";
 import cart from "../../assets/icon/cart.png";
 import avatar from "../../assets/icon/avatar.a296afc6.png";
 import { HiMenu } from "react-icons/hi";
+import useWishlist from "../hooks/useWishlist";
+import WishlistData from "../hooks/useCart";
+import Cartmodal from "../cart/Cartmodal";
+import auth from "../../Firebase.init";
+import { useAuthState } from "react-firebase-hooks/auth";
+import Logout from "../login/Logout";
 
 const Submenu = () => {
   const [hide, setHide] = useState(true);
   const [show, setShow] = useState(false);
+  const [cartmodal, setCartmodal] = useState(false);
+  const [user] = useAuthState(auth);
 
+  const { wishlistInfo } = useWishlist();
+  const { cartInfo } = WishlistData();
   const handleHide = () => {
     setHide(!hide);
   };
@@ -16,7 +26,7 @@ const Submenu = () => {
     setShow(!show);
   };
   return (
-    <div className=" grid grid-cols-2 container lg:hidden md:hidden block ">
+    <div className=" grid grid-cols-2 container lg:hidden md:hidden  ">
       <div className="grid grid-cols-2 relative">
         <div className="space-y-6">
           <HiMenu className="text-3xl" onClick={handleShow} />
@@ -85,35 +95,40 @@ const Submenu = () => {
           )}
         </div>
         <div className="ml-[-10px] mt-[-10px]">
-          <a href="#" className="text-3xl ">
+          <Link to="/" className="text-3xl ">
             e-shop
-          </a>
+          </Link>
         </div>
       </div>
       <div className="">
         <ul className="flex  justify-center gap-7">
           <div className="relative">
-            <li>
+            <Link to={"wishlist"}>
               <img src={wishlist} alt="" />
-            </li>
+            </Link>
             <p className="absolute bottom-5 left-5  bg-gray-900 text-gray-100 w-5 h-5 rounded-full flex items-center justify-center">
-              0
+              {wishlistInfo ? wishlistInfo.length : "0"}
             </p>
           </div>
           <div className="relative">
             <li>
-              <img src={cart} alt="" />
+              <img
+                onClick={() => setCartmodal(!cartmodal)}
+                src={cart}
+                className="cursor-pointer"
+                alt=""
+              />
             </li>
             <p className="absolute bottom-5 left-4  bg-gray-900 text-gray-100 w-5 h-5 rounded-full flex items-center justify-center">
-              0
+              {cartInfo ? cartInfo.length : "0"}
             </p>
           </div>
-          <div className="dropdown dropdown-end">
-            <label tabIndex="0" className="">
+          <div class="dropdown dropdown-end ">
+            <label tabIndex="0" class="">
               <img
                 src={avatar}
                 onClick={handleHide}
-                className="w-8 h8 cursor-pointer"
+                className="w-8 h-8  cursor-pointer"
                 alt=""
               />
             </label>
@@ -126,17 +141,27 @@ const Submenu = () => {
                   class="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-52"
                 >
                   <li>
-                    <a>Item 1</a>
+                    <Link to={"/my-account"}>My Account</Link>
                   </li>
-                  <li>
-                    <a>Item 2</a>
-                  </li>
+                  {user ? (
+                    <Logout />
+                  ) : (
+                    <>
+                      <li>
+                        <Link to={"/register"}>Register</Link>
+                      </li>
+                      <li>
+                        <Link to={"/login"}>Login</Link>
+                      </li>
+                    </>
+                  )}
                 </ul>
               </>
             )}
           </div>
         </ul>
       </div>
+      <Cartmodal cartmodal={cartmodal} />
     </div>
   );
 };

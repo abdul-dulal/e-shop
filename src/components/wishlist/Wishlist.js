@@ -8,7 +8,7 @@ const Wishlist = () => {
 
   return (
     <div>
-      <Breadcumb />
+      <Breadcumb tag="Wishlist" />
       <div class="overflow-x-auto container mt-6">
         <table class="table w-full">
           <thead>

@@ -1,6 +1,4 @@
-import React, { useEffect, useState } from "react";
-import { useQuery } from "react-query";
-import Loading from "../shere/Loading";
+import React, { useState } from "react";
 import Moreproduct from "./Moreproduct";
 import Review from "./Review";
 import Vedorview from "./Vedorview";
@@ -39,7 +37,7 @@ const VendorInfo = ({ data }) => {
       <p className=" border-solid border bg-gray-100 my-5"></p>
 
       {showdata === "vendor" && <Vedorview data={data} />}
-      {showdata === "review" && <Review />}
+      {showdata === "review" && <Review review={data} />}
       {showdata === "more" && <Moreproduct category={data.category} />}
     </div>
   );

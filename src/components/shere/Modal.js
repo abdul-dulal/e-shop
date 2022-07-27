@@ -16,12 +16,12 @@ const Modal = ({ popup, setPopup, data }) => {
               <div className="border-0 rounded-lg shadow-lg relative flex flex-col w-full bg-white outline-none focus:outline-none">
                 <div className="flex justify-between mt-8 px-8 pt-4">
                   <h2 className="text-3xl font-bold">{data.title}</h2>
-                  <h2
+                  <button
                     onClick={() => setPopup(false)}
                     className="cursor-pointer text-2xl font-semibold text-gray-400 "
                   >
                     X
-                  </h2>
+                  </button>
                 </div>
                 <hr />
                 <div className="grid grid-cols-2 gap-6 container py-10 ">
@@ -42,20 +42,12 @@ const Modal = ({ popup, setPopup, data }) => {
                       <p className="line-through">${data.price2}</p>
                     </div>
                     <p className="mb-5">
-                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                      Debitis, deserunt amet officiis minima, distinctio nulla
-                      excepturi aliquam dolorum deleniti doloribus nisi maxime!
-                      Enim blanditiis nemo repellat sint rem obcaecati tenetur
-                      maxime quisquam amet? In molestiae iusto minus neque
-                      aliquam. Illum reiciendis velit nostrum laborum nemo!
-                      Debitis nemo maiores odit ullam voluptatibus ut soluta
-                      accusamus cupiditate, placeat doloribus exercitationem
-                      officia voluptatum officiis quo at dicta voluptas eos
-                      repellendus tempore molestias repellat consequuntur. Alias
-                      aliquid, est quas hic sapiente dolores dolorem, ea
-                      corrupti fuga voluptas esse nostrum accusamus porro
-                      dolorum. Minus eaque in recusandae facilis totam id,
-                      tenetur dolore eos at inventore.
+                      Chocolate is a food product made from roasted and ground
+                      cacao pods, that is available as a liquid, solid or paste,
+                      on its own or as a flavoring agent in other foods.
+                      Chocolate is a food product made from roasted and ground
+                      cacao pods, that is available as a liquid, solid or paste,
+                      on its own or as a flavoring agent in other foods
                     </p>
                     <p className="border-solid border-2 bg-gray-100 my-10"></p>
                     <div className="flex gap-6 items-center ">

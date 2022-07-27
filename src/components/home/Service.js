@@ -6,7 +6,7 @@ import discount from "../../assets/icon/discount.png";
 
 const Service = () => {
   return (
-    <div className="container grid lg:grid-cols-4 md:grid-cols-2 mt-16 justify-center items-center">
+    <div className="container grid lg:grid-cols-4 md:grid-cols-2 mt-16 justify-center items-center space-y-4">
       <div className="flex ">
         <img src={shpinng} alt="" />
         <div className="ml-2">

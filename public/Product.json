@@ -6,6 +6,10 @@
     "price2": 12,
     "category": "accessories",
     "highlights": "best",
+    "tags": "HeadPhone",
+    "review": "Nice haedphone sound quality awsome",
+    "reviewImg": "https://scontent.fjsr1-1.fna.fbcdn.net/v/t1.6435-9/69858635_989284834750539_7940500872163753984_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=730e14&_nc_eui2=AeHLJri89nLANtMXTVKmRH4RdRVhCLD9Zd11FWEIsP1l3SgH8xJ1j9Y5Thn9dBqam2Rl1tvY8qsrh9oKjhRwaP6o&_nc_ohc=jUn8jLMvKL8AX89jYDy&_nc_ht=scontent.fjsr1-1.fna&oh=00_AT-xq_E0uw9QO2zs3TJ2xH5_xoaOOKkKwexXNRat3BGl3w&oe=62FF2EE8",
+    "reviewName": "Abdul Dulal",
     "vendorName": "e-mall-shop",
     "author": "Abdul Dulal"
   },
@@ -15,6 +19,7 @@
     "price": 5,
     "price2": 8,
     "category": "accessories",
+    "tags": "HeadPhone",
     "highlights": "best",
     "vendorName": "e-mall-shop",
     "author": "Abdul Dulal"
@@ -26,6 +31,8 @@
     "price2": 9,
     "category": "women",
     "highlights": "best",
+
+    "tags": "Soap",
     "vendorName": "Grirls Shop",
     "author": "Nafi"
   },
@@ -35,6 +42,10 @@
     "price": 2,
     "price2": 3,
     "category": "women",
+    "tags": "Lipstick",
+    "review": "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English.",
+    "reviewImg": "https://simgbb.com/avatar/QrQB28rMmpbS.jpg",
+    "reviewName": "Abdul Dulal",
     "highlights": "best",
     "vendorName": "Grirls Shop",
     "author": "Nafi"
@@ -44,7 +55,9 @@
     "img": "http://res.cloudinary.com/mhshuvoit/image/upload/v1649436438/ecommerce-app/products/1649436433381-saree%202.jpg.jpg",
     "price": 5,
     "price2": "6",
+    "tags": "Saree",
     "category": "women",
+
     "highlights": "best",
     "vendorName": "Grirls Shop",
     "author": "Nafi"
@@ -55,6 +68,7 @@
     "price": 5,
     "price2": 6,
     "category": "women",
+    "tags": "Saree",
     "highlights": "best",
     "vendorName": "Grirls Shop",
     "author": "Nafi"
@@ -66,6 +80,10 @@
     "price2": 6,
     "category": "food",
     "highlights": "best",
+    "tags": "Chocolate",
+    "review": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae?",
+    "reviewName": "Abdullah",
+    "reviewImg": "https://simgbb.com/avatar/QrQB28rMmpbS.jpg",
     "vendorName": "Food Zone",
     "author": "Imtiaz"
   },
@@ -75,6 +93,7 @@
     "price": 1,
     "price2": 3,
     "category": "food",
+    "tags": "Biscuit",
     "highlights": "best",
     "vendorName": "Food Zone",
     "author": "Imtiaz"
@@ -86,6 +105,7 @@
     "price2": 4,
     "category": "food",
     "highlights": "top",
+    "tags": "Biscuit",
     "vendorName": "Food Zone",
     "author": "Imtiaz"
   },
@@ -96,6 +116,10 @@
     "price2": 6,
     "category": "food",
     "highlights": "top",
+    "tags": "Cake",
+    "review": "I have purchased this mobile some days ago. It is a very good mobile",
+    "reviewImg": "https://simgbb.com/avatar/QrQB28rMmpbS.jpg",
+    "reviewName": "Abdullah",
     "vendorName": "Food Zone",
     "author": "Imtiaz"
   },
@@ -106,6 +130,7 @@
     "price2": 4,
     "category": "food",
     "highlights": "top",
+    "tags": "Cake",
     "vendorName": "Food Zone",
     "author": "Imtiaz"
   },
@@ -117,6 +142,7 @@
     "price2": 300,
     "category": "electronic",
     "highlights": "top",
+    "tags": "Tv",
     "vendorName": "e-mall-shop",
     "author": "Abdul Dulal"
   },
@@ -126,6 +152,7 @@
     "price": 299,
     "price2": 320,
     "category": "electronic",
+    "tags": "Oven",
     "highlights": "top",
     "vendorName": "e-mall-shop",
     "author": "Abdul Dulal"
@@ -136,6 +163,10 @@
     "price": 420,
     "price2": 450,
     "category": "electronic",
+    "reviewImg": "https://scontent.fjsr1-1.fna.fbcdn.net/v/t1.6435-9/69858635_989284834750539_7940500872163753984_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=730e14&_nc_eui2=AeHLJri89nLANtMXTVKmRH4RdRVhCLD9Zd11FWEIsP1l3SgH8xJ1j9Y5Thn9dBqam2Rl1tvY8qsrh9oKjhRwaP6o&_nc_ohc=jUn8jLMvKL8AX89jYDy&_nc_ht=scontent.fjsr1-1.fna&oh=00_AT-xq_E0uw9QO2zs3TJ2xH5_xoaOOKkKwexXNRat3BGl3w&oe=62FF2EE8",
+    "review": "awesome quality",
+    "reviewName": "Dulal",
+    "tags": "Laptop",
     "highlights": "top",
     "vendorName": "e-mall-shop",
     "author": "Abdul Dulal"
@@ -146,7 +177,11 @@
     "price": 280,
     "price2": 300,
     "category": "electronic",
+    "tags": "Mobile",
     "highlights": "top",
+    "review": "best product now a dasy",
+    "reviewImg": "https://simgbb.com/avatar/QrQB28rMmpbS.jpg",
+    "reviewName": "Dulal",
     "vendorName": "e-mall-shop",
     "author": "Abdul Dulal"
   },
@@ -155,6 +190,7 @@
     "img": "http://res.cloudinary.com/mhshuvoit/image/upload/v1649414270/ecommerce-app/products/1649414267095-realme9i.jpg.jpg",
     "price": 210,
     "price2": 220,
+    "tags": "Mobile",
     "category": "electronic",
     "highlights": "top",
     "vendorName": "e-mall-shop",
@@ -165,10 +201,15 @@
     "img": "http://res.cloudinary.com/mhshuvoit/image/upload/v1649574623/ecommerce-app/products/1649574620594-shoe2.jpg.jpg",
     "price": 11,
     "price2": 14,
+    "tags": "Shoe",
     "category": "men",
+    "review": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur, minus?",
+    "reviewName": "Nafi",
+    "reviewImg": "https://scontent.fjsr1-1.fna.fbcdn.net/v/t39.30808-6/277251579_1415229065581556_4306562034599945375_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=174925&_nc_eui2=AeEjkgdPzk1TREbSZ6ecf-aJr-fr2OqKPkSv5-vY6oo-RMupPpQxpbwx35p1wogoEf0NYVg7UR3gjIwgPXOOTevV&_nc_ohc=k5aXcEFBGn4AX86k3Oz&_nc_zt=23&_nc_ht=scontent.fjsr1-1.fna&oh=00_AT-MbHtYJJW38HJCJKx-lpXMXjp3YDRC6Qmr4S2myzy5Dg&oe=62DF4A1F",
     "highlights": "new",
     "vendorName": "Fashion Shop",
-    "author": "Abdullah"
+    "author": "Abdullah",
+    "isrevew": "yes"
   },
   {
     "title": "Classy Sneakers for Men",
@@ -176,6 +217,7 @@
     "price": 4,
     "price2": 5,
     "category": "men",
+    "tags": "Shoe",
     "highlights": "new",
     "vendorName": "Fashion Shop",
     "author": "Abdullah"
@@ -186,6 +228,7 @@
     "price": 10,
     "price2": 12,
     "category": "men",
+    "tags": "Shirt",
     "highlights": "new",
     "vendorName": "Fashion Shop",
     "author": "Abdullah"
@@ -197,6 +240,7 @@
     "price2": 10,
     "category": "men",
     "highlights": "new",
+    "tags": "Shirt",
     "vendorName": "Fashion Shop",
     "author": "Abdullah"
   },
@@ -207,6 +251,7 @@
     "price2": "6",
     "category": "women",
     "highlights": "new",
+    "tags": "Saree",
     "vendorName": "Grirls Shop",
     "author": "Nafi"
   },
@@ -217,7 +262,11 @@
     "price2": 220,
     "category": "electronic",
     "highlights": "new",
+    "review": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Commodi dolorem ea, molestias quas eos doloremque nisi rerum culpa illum recusandae.",
+    "reviewImg": "https://scontent.fjsr1-1.fna.fbcdn.net/v/t39.30808-6/277251579_1415229065581556_4306562034599945375_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=174925&_nc_eui2=AeEjkgdPzk1TREbSZ6ecf-aJr-fr2OqKPkSv5-vY6oo-RMupPpQxpbwx35p1wogoEf0NYVg7UR3gjIwgPXOOTevV&_nc_ohc=k5aXcEFBGn4AX86k3Oz&_nc_zt=23&_nc_ht=scontent.fjsr1-1.fna&oh=00_AT-MbHtYJJW38HJCJKx-lpXMXjp3YDRC6Qmr4S2myzy5Dg&oe=62DF4A1F",
+    "reviewName": "Nafi",
     "vendorName": "e-mall-shop",
+    "tags": "Mobile",
     "author": "Abdul Dulal"
   }
 ]

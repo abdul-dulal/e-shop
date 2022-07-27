@@ -38,7 +38,7 @@ const Singlevendor = () => {
 
   return (
     <>
-      <Breadcumb />
+      <Breadcumb tag="Vendor" />
       <div className="container">
         <div className="flex justify-between container mt-10 border-2 p-2">
           <div>

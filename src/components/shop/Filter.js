@@ -1,22 +1,6 @@
-import React, { useEffect, useState } from "react";
-import Accessories from "../home/category/Accessories";
-import Clening from "../home/category/Clening";
-import Cooking from "../home/category/Cooking";
-import Electical from "../home/category/Electical";
-import Flower from "../home/category/Flower";
-import Food from "../home/category/Food";
-import Health from "../home/category/Health";
-import LifeStyle from "../home/category/LifeStyle";
-import MenFashion from "../home/category/MenFashion";
-import Sports from "../home/category/Sports";
-import Toys from "../home/category/Toys";
-import WomenFashion from "../home/category/WomenFashion";
-import useAllprdcut from "../hooks/useAllprdcut";
-import Breadcumb from "../shere/Breadcumb";
-import Filter from "./Filter";
-import Productdetails from "./Productdetails";
+import React, { useState } from "react";
 
-const Shop = () => {
+const Filter = () => {
   const [accessories, setaccessories] = useState("");
   const [fashion, setFashion] = useState("");
   const [food, setFood] = useState("");
@@ -31,14 +15,17 @@ const Shop = () => {
   const [toys, setToys] = useState("");
   const [searchTerm, setSearchTerm] = useState(false);
   const [filter, setFilter] = useState(false);
-
   const [hide, setHide] = useState(false);
-  const { data } = useAllprdcut();
   return (
-    <>
-      <Breadcumb tag="Shop" />
-      <div className="lg:flex md:flex  container">
-        <div className="lg:block md:block hidden">
+    <div className="lg:hidden md:hidden block">
+      <div className="">
+        <p
+          className="text-2xl text-purple-600 font-bold"
+          onClick={() => setHide(!hide)}
+        >
+          {hide ? "-" : "+"} Filter
+        </p>
+        {hide ? (
           <div className="w-80">
             <h2 className="text-2xl mt-4">Search</h2>
             <input
@@ -138,62 +125,12 @@ const Shop = () => {
               </div>
             </div>
           </div>
-        </div>
-        <Filter />
-
-        <div>
-          {accessories === true && <Accessories />}
-          {accessories === "cleing" && <Clening />}
-          {fashion === true && <WomenFashion />}
-          {food === true && <Food />}
-          {eletronic === true && <Electical />}
-          {mFashion === true && <MenFashion />}
-          {cooking === true && <Cooking />}
-          {clening === true && <Clening />}
-          {flower === true && <Flower />}
-          {healthy === true && <Health />}
-          {sport === true && <Sports />}
-          {style === true && <LifeStyle />}
-          {toys === true && <Toys />}
-          {accessories ||
-          fashion ||
-          food ||
-          mFashion ||
-          cooking ||
-          clening ||
-          flower ||
-          healthy ||
-          sport ||
-          style ||
-          toys ? (
-            ""
-          ) : (
-            <div className={`grid lg:grid-cols-3 md:grid-cols-1  `}>
-              {data
-                .filter((val) => {
-                  if (searchTerm == "") {
-                    return val;
-                  } else if (
-                    val.title?.toLowerCase().includes(searchTerm?.toLowerCase())
-                  ) {
-                    return val;
-                  }
-                })
-                .map((val) => {
-                  return (
-                    <Productdetails
-                      key={val._id}
-                      value={val}
-                      searchTerm={searchTerm}
-                    />
-                  );
-                })}
-            </div>
-          )}
-        </div>
+        ) : (
+          ""
+        )}
       </div>
-    </>
+    </div>
   );
 };
 
-export default Shop;
+export default Filter;

@@ -1,6 +1,5 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import Hover from "../../shere/Hover";
-import Loading from "../../shere/Loading";
 import useVendor from "./useVendor";
 
 const VendorProduct = ({ category }) => {

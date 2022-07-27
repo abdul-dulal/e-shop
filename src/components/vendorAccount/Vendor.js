@@ -1,19 +1,19 @@
 import React from "react";
-import { Link, NavLink, Outlet } from "react-router-dom";
 import Breadcumb from "../shere/Breadcumb";
+import { Link, NavLink, Outlet } from "react-router-dom";
 
-const Myaccount = () => {
+const Vendor = () => {
   return (
     <div>
       <Breadcumb tag="Myaccount" />
-      <div className="lg:px-32 md:px-10 mt-20">
-        <div className="lg:flex md:flex   bg-gray-200  gap-10 py-16  ">
-          <div className="ml-10">
+      <div className="lg:px-32 md:px-10  mt-20">
+        <div className="lg:flex bg-gray-200  gap-10 py-16  ">
+          <div className="bg-gray-700 p-5 lg:ml-10 w-48 md:ml-64 ml-24 rounded-sm">
             <ul className="">
-              <li className=" hover:bg-purple-600 border border-gray-300   cursor-pointer ">
+              <li className=" hover:bg-purple-600 border  cursor-pointer ">
                 <NavLink
-                  to="/my-account"
-                  className=" flex justify-center items-center h-10 w-36 rounded-sm   hover:text-gray-100"
+                  to="/vendor"
+                  className=" flex justify-center items-center h-10 w-36 rounded-sm text-gray-200 "
                 >
                   Dashboard
                 </NavLink>
@@ -23,14 +23,14 @@ const Myaccount = () => {
                   style={({ isActive }) =>
                     isActive
                       ? {
-                          color: "red",
+                          color: "#9333EA",
                         }
-                      : { color: "black" }
+                      : { color: "" }
                   }
-                  to="/my-account/order"
-                  className=" flex justify-center items-center h-10 w-36 rounded-sm   hover:text-gray-100"
+                  to="/vendor/products"
+                  className=" flex justify-center items-center h-10 w-36 rounded-sm   text-gray-200"
                 >
-                  Order
+                  Prodcuts
                 </NavLink>
               </li>
               <li className=" hover:bg-purple-600 border border-gray-300   cursor-pointer ">
@@ -38,14 +38,14 @@ const Myaccount = () => {
                   style={({ isActive }) =>
                     isActive
                       ? {
-                          color: "red",
+                          color: "#9333EA",
                         }
-                      : { color: "black" }
+                      : { color: "" }
                   }
-                  to="/my-account/address"
-                  className=" flex justify-center items-center h-10 w-36 rounded-sm   hover:text-gray-100"
+                  to="/vendor/visit-store"
+                  className=" flex justify-center items-center h-10 w-36 rounded-sm  text-gray-200"
                 >
-                  Address
+                  Visit Store
                 </NavLink>
               </li>
               <li className=" hover:bg-purple-600 border border-gray-300   cursor-pointer ">
@@ -53,14 +53,14 @@ const Myaccount = () => {
                   style={({ isActive }) =>
                     isActive
                       ? {
-                          color: "red",
+                          color: "#9333EA",
                         }
-                      : { color: "black" }
+                      : { color: "" }
                   }
-                  to="/my-account/account-details"
-                  className=" flex justify-center items-center h-10 w-36 rounded-sm   hover:text-gray-100"
+                  to="/vendor/settings"
+                  className=" flex justify-center items-center h-10 w-36 rounded-sm text-gray-200"
                 >
-                  Details
+                  Settings
                 </NavLink>
               </li>
               <li className=" hover:bg-purple-600 border border-gray-300   cursor-pointer ">
@@ -68,12 +68,12 @@ const Myaccount = () => {
                   style={({ isActive }) =>
                     isActive
                       ? {
-                          color: "red",
+                          color: "#9333EA",
                         }
-                      : { color: "black" }
+                      : { color: "" }
                   }
-                  to="/my-account/logout"
-                  className=" flex justify-center items-center h-10   w-36 rounded-sm   hover:text-gray-100"
+                  to="/vendor/logout"
+                  className=" flex justify-center items-center h-10   w-36 rounded-sm text-gray-200"
                 >
                   Logout
                 </NavLink>
@@ -90,4 +90,4 @@ const Myaccount = () => {
   );
 };
 
-export default Myaccount;
+export default Vendor;
