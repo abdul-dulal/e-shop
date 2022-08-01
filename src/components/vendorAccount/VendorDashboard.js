@@ -2,25 +2,27 @@ import React from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { useNavigate } from "react-router-dom";
 import auth from "../../Firebase.init";
-
+import Logout from "../login/Logout";
 const VendorDashboard = () => {
   const [user] = useAuthState(auth);
   const navigate = useNavigate();
 
   return (
     <div className="">
-      <h2>
-        Hello {user?.email.slice(0, -10)}
-        <span className="ml-2">
-          (not {user?.email.slice(0, -10)}?
-          <span className="text-purple-600 underline ml-1">logout</span>)
+      <div className="flex">
+        <h2>Hello {user?.email.slice(0, -10)}</h2>(
+        <span className="ml-2">not {user?.email.slice(0, -10)}?</span>
+        <span className="text-purple-600 underline">
+          <Logout />
         </span>
-      </h2>
+        )
+      </div>
+
       <button
-        onClick={() => navigate("/vendor")}
+        onClick={() => navigate("/my-account")}
         className="bg-purple-600 h-9 w-52 mt-10 rounded-sm text-white font-semibold"
       >
-        Go to Vendor Dashbarod
+        Go to My-Account
       </button>
     </div>
   );

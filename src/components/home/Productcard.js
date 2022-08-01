@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from "react";
+import useReviews from "../hooks/useReviews";
 import Hover from "../shere/Hover";
 import Loading from "../shere/Loading";
 
 const Productcard = () => {
   const [products, setproduct] = useState([]);
   const [loading, setLoading] = useState(false);
+  const { reviews } = useReviews();
   useEffect(() => {
     fetch("http://localhost:4000/get-bestSelling?highlights=best")
       .then((res) => res.json())
@@ -13,6 +15,7 @@ const Productcard = () => {
         setLoading(true);
       });
   }, []);
+
   return (
     <div>
       {loading ? (
@@ -36,68 +39,17 @@ const Productcard = () => {
                       <p className="line-through">${product.price2}</p>
                     </div>
                     <Hover data={product} />
-                    <div className="flex">
-                      <span
-                        class
-                        style={{
-                          position: "relative",
-                          overflow: "hidden",
-                          display: "block",
-                          color: "red",
-                          fontSize: "20px",
-                        }}
-                      >
-                        ★
-                      </span>
-                      <span
-                        class
-                        style={{
-                          position: "relative",
-                          overflow: "hidden",
-                          display: "block",
-                          color: "red",
-                          fontSize: "20px",
-                        }}
-                      >
-                        ★
-                      </span>
-                      <span
-                        class
-                        style={{
-                          position: "relative",
-                          overflow: "hidden",
-                          display: "block",
-                          color: "red",
-                          fontSize: "20px",
-                        }}
-                      >
-                        ★
-                      </span>
-                      <span
-                        class
-                        style={{
-                          position: "relative",
-                          overflow: "hidden",
-                          display: "block",
-                          color: "red",
-                          fontSize: "20px",
-                        }}
-                      >
-                        ★
-                      </span>
-                      <span
-                        class
-                        style={{
-                          position: "relative",
-                          overflow: "hidden",
-                          display: "block",
-                          color: "red",
-                          fontSize: "20px",
-                        }}
-                      >
-                        ★
-                      </span>
-                    </div>
+                    {product.ratting ? (
+                      <div className="mt-3">
+                        <p>{product.ratting == 1 ? "⭐" : ""} </p>
+                        <p>{product.ratting == 2 ? "⭐★" : ""} </p>
+                        <p>{product.ratting == 3 ? "⭐⭐⭐★★" : ""} </p>
+                        <p>{product.ratting == 4 ? "⭐⭐⭐⭐★" : ""} </p>
+                        <p>{product.ratting == 5 ? "⭐⭐⭐⭐⭐" : ""} </p>
+                      </div>
+                    ) : (
+                      <p className="mt-3">★★★★★</p>
+                    )}
                   </div>
                 </div>
               </div>

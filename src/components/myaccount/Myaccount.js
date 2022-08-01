@@ -1,8 +1,12 @@
 import React from "react";
 import { Link, NavLink, Outlet } from "react-router-dom";
 import Breadcumb from "../shere/Breadcumb";
+import { useNavigate, useLocation } from "react-router-dom";
 
 const Myaccount = () => {
+  let navigate = useNavigate();
+  let location = useLocation();
+
   return (
     <div>
       <Breadcumb tag="Myaccount" />

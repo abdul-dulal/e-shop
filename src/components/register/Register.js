@@ -34,6 +34,7 @@ const Register = () => {
       const newUser = {
         img: "",
         status: vendor,
+        user: data.email,
         name: data.store,
       };
       fetch("http://localhost:4000/customer", {
@@ -64,7 +65,7 @@ const Register = () => {
 
   return (
     <div className="h-screen">
-      <Breadcumb />
+      <Breadcumb tag="Register" />
       <div className="text-center text-2xl font-bold text-purple-600 py-8 space-x-2">
         <button onClick={() => navigate("/register")}>Register</button>
         <span>|</span>
@@ -75,87 +76,85 @@ const Register = () => {
 
       <div className="container  w-full flex items-center justify-center">
         <form onSubmit={handleSubmit(onSubmit)}>
-          <label className="font-semibold uppercase ">Email</label>
-          <br />
-          <input
-            type="email"
-            placeholder="Enter Your Email"
-            {...register("email", {
-              required: {
-                value: true,
-                message: "Email is required",
-              },
-              pattern: {
-                value: /[a-z0-9]+@[a-z]+\.[a-z]{2,3}/,
-                message: "add special digit",
-              },
-            })}
-            className="input input-bordered input-accent w-full max-w-xs"
-          />
-          <label>
-            {errors.email?.type === "required" && (
-              <span className="label-text-alt text-red-500">
-                {errors.email?.message}
-              </span>
-            )}
-            {errors.email?.type === "pattern" && (
-              <span className="label-text-alt text-red-500">
-                {errors.email.message}
-              </span>
-            )}
-          </label>
-          <label>
-            {errors.email?.type === "required" && (
-              <span className="label-text-alt text-red-500">
-                {errors.email.message}
-              </span>
-            )}
-          </label>
-          <label>
-            {errors.email?.type === "pattern" && (
-              <span className="label-text-alt text-red-500">
-                {errors.email.message}
-              </span>
-            )}
-          </label>
-          <br />
-          <label className="font-semibold uppercase">Password</label>
-          <br />
-          <input
-            type="password"
-            placeholder="Enter Your Password"
-            {...register(
-              "password",
-              {
+          <label className="font-semibold uppercase block my-3">Email</label>
+
+          <div>
+            <input
+              type="email"
+              placeholder="Enter Your Email"
+              {...register("email", {
                 required: {
                   value: true,
-                  message: "Pawssword is Required",
+                  message: "Email is required",
                 },
-              },
-              {
-                minLength: {
-                  value: 6,
-                  message: "Password must be 6 character",
+                pattern: {
+                  value: /[a-z0-9]+@[a-z]+\.[a-z]{2,3}/,
+                  message: "add special digit",
                 },
-              }
-            )}
-            className="border-2 border-gray-400 w-80 h-12 px-3  my-2 placeholder:text-purple-400 bg-white rounded-md focus:ring"
-          />
+              })}
+              className="input input-bordered input-accent w-full max-w-xs"
+            />
+          </div>
           <label>
-            {errors.password?.type === "required" && (
+            {errors.email?.type === "pattern" && (
               <span className="label-text-alt text-red-500">
-                {errors.email?.message}
+                {errors.email.message}
               </span>
             )}
           </label>
           <label>
+            {errors.email?.type === "required" && (
+              <span className="label-text-alt text-red-500 mt-2 text-xl">
+                {errors.email.message}
+              </span>
+            )}
+          </label>
+          <label>
+            {errors.email?.type === "pattern" && (
+              <span className="label-text-alt text-red-500 ">
+                {errors.email.message}
+              </span>
+            )}
+          </label>
+          <br />
+          <label className="font-semibold uppercase my-3">Password</label>
+          <div>
+            <input
+              type="password"
+              placeholder="Enter Your Password"
+              {...register(
+                "password",
+                {
+                  required: {
+                    value: true,
+                    message: "Pawssword is Required",
+                  },
+                },
+                {
+                  minLength: {
+                    value: 6,
+                    message: "Password must be 6 character",
+                  },
+                }
+              )}
+              className="border-2 border-gray-400 w-80 h-12 px-3  my-3 placeholder:text-purple-400 bg-white rounded-md focus:ring"
+            />
+          </div>
+          <label>
+            {errors.password?.type === "required" && (
+              <span className="label-text-alt text-red-500 text-xl">
+                {errors.password?.message}
+              </span>
+            )}
+          </label>
+          <label className="block">
             {errors.password?.type === "minLength" && (
               <span className="label-text-alt text-red-500">
                 {errors.email?.message}
               </span>
             )}
           </label>
-          <br />
+
           {customer ? (
             ""
           ) : (
@@ -211,7 +210,9 @@ const Register = () => {
             disabled={!verified || !agree}
             type="submit"
             value="Register"
-            className={`w-80 h-12 bg-purple-600 text-white rounded-md cursor-pointer `}
+            className={`w-80 h-12 bg-purple-600 text-white rounded-md ${
+              !verified || !agree ? "cursor-not-allowed" : "cursor-pointer"
+            } `}
           />
         </form>
       </div>

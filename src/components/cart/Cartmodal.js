@@ -5,6 +5,7 @@ import useCart from "../hooks/useCart";
 import { useNavigate } from "react-router-dom";
 const Cartmodal = ({ cartmodal }) => {
   const { cartInfo } = useCart();
+
   const navigate = useNavigate();
   const price = cartInfo?.map((e) => e.price);
   const totalPrice =
@@ -18,7 +19,7 @@ const Cartmodal = ({ cartmodal }) => {
       {cartmodal && (
         <div class="origin-top-right absolute lg:right-32 md:right-12 right-5 z-50 sm:right-0 mt-2 w-72 rounded-md shadow-lg py-1 bg-white ring-1 ring-black ring-opacity-5 focus:outline-none transform opacity-100 scale-100">
           <div className="overflow-y-scroll h-96">
-            {cartInfo.length > 0 ? (
+            {cartInfo?.length > 0 ? (
               <div>
                 {cartInfo.map((data) => (
                   <div>

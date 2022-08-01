@@ -7,10 +7,15 @@ import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import useWishlist from "../hooks/useWishlist";
 import useCart from "../hooks/useCart";
+import { useAuthState } from "react-firebase-hooks/auth";
+import auth from "../../Firebase.init";
+
 const Hover = ({ data }) => {
   const [popup, setPopup] = useState(false);
-  const { refetch } = useWishlist();
-  const { reload } = useCart();
+  const { wishlistInfo, refetch } = useWishlist();
+  const { cartInfo, reload } = useCart();
+
+  const [user] = useAuthState(auth);
 
   const handleWishlit = () => {
     const productDeatils = {
@@ -25,6 +30,7 @@ const Hover = ({ data }) => {
       review: data.review,
       reviewImg: data.reviewImg,
       reviewName: data.reviewName,
+      user: user.email,
     };
     fetch("http://localhost:4000/post-wishlist", {
       method: "POST",
@@ -37,17 +43,24 @@ const Hover = ({ data }) => {
         return response.json();
       })
       .then((data) => {
+        if (data.success === true) {
+          toast.success("Successfully added to wishlist");
+        } else {
+          toast.error("Already exist into wishlist");
+        }
         refetch();
-        toast("Successfully Added");
       });
   };
 
   const handleCart = () => {
     const newCart = {
+      user: user.email,
       name: data.title,
       price: data.price,
       quantity: 1,
       img: data.img,
+      tags: data.tags,
+      vendorName: data.vendorName,
     };
     fetch("http://localhost:4000/post-cart", {
       method: "POST",
@@ -61,7 +74,12 @@ const Hover = ({ data }) => {
         return response.json();
       })
       .then((data) => {
-        toast("Successfully Added");
+        if (data.success === true) {
+          toast.success("Successfully added to cart");
+        } else {
+          toast.error("Already exist into Cart");
+        }
+
         reload();
       });
   };
@@ -78,14 +96,14 @@ const Hover = ({ data }) => {
         <img
           src={wishlist}
           onClick={handleWishlit}
-          className="p-1 bg-white rounded-full cursor-pointer"
+          className="p-1 bg-white rounded-full cursor-pointer "
           alt=""
         />
 
         <img
           src={cart}
           onClick={handleCart}
-          className="p-1 bg-white rounded-full cursor-pointer"
+          className={`p-1 bg-white rounded-full cursor-pointer `}
           alt=""
         />
       </div>

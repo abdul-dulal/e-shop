@@ -5,15 +5,15 @@ import Carttable from "./Carttable";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 const Cart = () => {
-  const [increment, setIncrement] = useState(1);
-
   const { cartInfo, refetch } = useCart();
   const navigate = useNavigate();
+  let total = 0;
+  console.log(total);
 
   return (
     <div>
       <div>
-        <Breadcumb />
+        <Breadcumb tag="Cart" />
         <div class="overflow-x-auto container mt-6">
           <table class="table w-full">
             <thead>
@@ -28,12 +28,7 @@ const Cart = () => {
             </thead>
             <tbody>
               {cartInfo?.map((info) => (
-                <Carttable
-                  key={info._id}
-                  info={info}
-                  increment={increment}
-                  setIncrement={setIncrement}
-                />
+                <Carttable key={info._id} info={info} total={total} />
               ))}
             </tbody>
           </table>

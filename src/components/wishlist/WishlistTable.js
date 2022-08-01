@@ -2,9 +2,9 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import useWishlist from "../hooks/useWishlist";
-const WishlistTable = ({ data }) => {
+const WishlistTable = ({ data, refetch }) => {
   const { img, price, price2, name, _id } = data;
-  const { refetch } = useWishlist();
+
   const navigate = useNavigate();
 
   const removeItems = () => {

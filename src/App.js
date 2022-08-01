@@ -16,10 +16,10 @@ import Editpassword from "./components/myaccount/Editpassword";
 import Checkout from "./components/cart/Checkout";
 import Vendor from "./components/vendorAccount/Vendor";
 import VendorProducts from "./components/vendorAccount/VendorProducts";
-import VisitStore from "./components/vendorAccount/VisitStore";
 import Setting from "./components/vendorAccount/Setting";
 import VendorLogut from "./components/vendorAccount/VendorLogut";
 import VendorDashboard from "./components/vendorAccount/VendorDashboard";
+import PrivateRoute from "./components/routes/PrivateRoute";
 
 // import Vendor from "./components/home/vendor/Vendorslider";
 // import Vendorslider from "./components/home/vendor/Vendorslider";
@@ -34,7 +34,14 @@ function App() {
         ))}
         <Route path="/product-details/:id" element={<Details />} />
         <Route path="/shop/:id" element={<Singlevendor />} />
-        <Route path="/my-account" element={<Myaccount />}>
+        <Route
+          path="/my-account"
+          element={
+            <PrivateRoute>
+              <Myaccount />
+            </PrivateRoute>
+          }
+        >
           <Route index element={<Dashborad />} />
           <Route path="order" element={<Order />} />
           <Route path="address" element={<Address />} />
@@ -47,7 +54,6 @@ function App() {
         <Route path="/vendor" element={<Vendor />}>
           <Route index element={<VendorDashboard />} />
           <Route path="products" element={<VendorProducts />} />
-          <Route path="visit-store" element={<VisitStore />} />
           <Route path="settings" element={<Setting />} />
           <Route path="logout" element={<VendorLogut />} />
         </Route>

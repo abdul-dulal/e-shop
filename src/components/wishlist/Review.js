@@ -1,10 +1,20 @@
 import React, { useState } from "react";
+import { useEffect } from "react";
 import { FaStar } from "react-icons/fa";
 import { toast } from "react-toastify";
 const Review = ({ review }) => {
   const [currentValue, setCurrentValue] = useState(0);
   const [hoverValue, setHoverValue] = useState(undefined);
+  const [clientReview, setClientReview] = useState();
   const stars = Array(5).fill(0);
+
+  const url = `http://localhost:4000/vendorName?vendorName=${review.reviewName}`;
+  console.log(url);
+  useEffect(() => {
+    fetch(url)
+      .then((res) => res.json())
+      .then((data) => setClientReview(data));
+  }, [review?.reviewName]);
 
   const handleClick = (value) => {
     setCurrentValue(value);
@@ -26,14 +36,20 @@ const Review = ({ review }) => {
     }
     textInput.current.value = "";
   };
-
+  console.log(clientReview);
   return (
     <div className="flex justify-between my-10">
-      <div className="flex gap-14">
-        <img src={review.reviewImg} className="h-28 w-28 rounded-sm" alt="" />
-        <div>
-          <h1>{review.reviewName}</h1>
-          <h2>{review.review}</h2>
+      <div className="  ">
+        <div className="flex gap-14">
+          <img
+            src={review?.reviewImg}
+            className="h-28 w-28 rounded-sm"
+            alt=""
+          />
+          <div className="">
+            <h2>{review?.reviewName}</h2>
+            <h2>{review?.review}</h2>
+          </div>
         </div>
       </div>
       <div className=" w-96 shadow-lg h-80 px-5 space-y-2">

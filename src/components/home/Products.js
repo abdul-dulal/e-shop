@@ -14,7 +14,7 @@ const Products = () => {
       <div className="flex justify-center space-x-4 mt-10">
         <button
           onClick={() => setShowproduct("best")}
-          className={`uppercase bg-[#7C3AED] py-2 lg:px-6 md:px-6 px-2 text-white font-semibold ${
+          className={`uppercase bg-purple-600 py-2 lg:px-6 md:px-6 px-2 text-white font-semibold hover:bg-gray-600 ${
             showProduct === "best" ? "bg-black" : ""
           }`}
         >
@@ -22,7 +22,7 @@ const Products = () => {
         </button>
         <button
           onClick={() => setShowproduct("top")}
-          className={`uppercase bg-[#7C3AED] py-2 lg:px-6 md:px-6 px-2 text-white font-semibold hover:bg-black ${
+          className={`uppercase bg-purple-600 py-2 lg:px-6 md:px-6 px-2 text-white font-semibold hover:bg-gray-600 ${
             showProduct === "top" ? "bg-black" : ""
           }`}
         >
@@ -30,7 +30,7 @@ const Products = () => {
         </button>
         <button
           onClick={() => setShowproduct("new")}
-          className={`uppercase bg-[#7C3AED] py-2 lg:px-6 md:px-6 px-2 text-white font-semibold hover:bg-black ${
+          className={`uppercase bg-purple-600 py-2 lg:px-6 md:px-6 px-2 text-white font-semibold hover:bg-gray-600  ${
             showProduct === "new" ? "bg-black" : ""
           }`}
         >

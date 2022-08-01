@@ -17,7 +17,6 @@ const Moreproduct = ({ category }) => {
     <div>
       {moreProduct ? (
         <>
-          {" "}
           {loading ? (
             <>
               <div className="flex lg:justify-between gap-8 flex-wrap justify-center container mt-10  overflow-hidden ">
@@ -40,68 +39,17 @@ const Moreproduct = ({ category }) => {
                         </div>
                         <Hover data={e} />
 
-                        <div className="flex">
-                          <span
-                            class
-                            style={{
-                              position: "relative",
-                              overflow: "hidden",
-                              display: "block",
-                              color: "red",
-                              fontSize: "20px",
-                            }}
-                          >
-                            ★
-                          </span>
-                          <span
-                            class
-                            style={{
-                              position: "relative",
-                              overflow: "hidden",
-                              display: "block",
-                              color: "red",
-                              fontSize: "20px",
-                            }}
-                          >
-                            ★
-                          </span>
-                          <span
-                            class
-                            style={{
-                              position: "relative",
-                              overflow: "hidden",
-                              display: "block",
-                              color: "red",
-                              fontSize: "20px",
-                            }}
-                          >
-                            ★
-                          </span>
-                          <span
-                            class
-                            style={{
-                              position: "relative",
-                              overflow: "hidden",
-                              display: "block",
-                              color: "red",
-                              fontSize: "20px",
-                            }}
-                          >
-                            ★
-                          </span>
-                          <span
-                            class
-                            style={{
-                              position: "relative",
-                              overflow: "hidden",
-                              display: "block",
-                              color: "red",
-                              fontSize: "20px",
-                            }}
-                          >
-                            ★
-                          </span>
-                        </div>
+                        {e.ratting ? (
+                          <div className="mt-3">
+                            <p>{e.ratting == 1 ? "⭐" : ""} </p>
+                            <p>{e.ratting == 2 ? "⭐★" : ""} </p>
+                            <p>{e.ratting == 3 ? "⭐⭐⭐★★" : ""} </p>
+                            <p>{e.ratting == 4 ? "⭐⭐⭐⭐★" : ""} </p>
+                            <p>{e.ratting == 5 ? "⭐⭐⭐⭐⭐" : ""} </p>
+                          </div>
+                        ) : (
+                          <p className="mt-3">★★★★★</p>
+                        )}
                       </div>
                     </div>
                   </div>

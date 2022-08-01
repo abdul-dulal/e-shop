@@ -3,7 +3,7 @@ import cart from "../../assets/icon/wishlist.png";
 import { FaFacebookF } from "react-icons/fa";
 import { AiOutlineTwitter } from "react-icons/ai";
 import { ImLinkedin2 } from "react-icons/im";
-
+import remove from "../../assets/icon/delete.png";
 const Modal = ({ popup, setPopup, data }) => {
   const [increment, setIncrement] = useState(1);
 
@@ -11,17 +11,17 @@ const Modal = ({ popup, setPopup, data }) => {
     <div>
       {popup ? (
         <>
-          <div className="overflow-x-hidden overflow-y-auto fixed inset-0  outline-none focus:outline-none z-50 mt-12 ">
-            <div className="relative my-6 w-11/12 md:w-4/5 m-auto bg-white ">
+          <div className="overflow-x-hidden overflow-y-auto fixed inset-0  outline-none focus:outline-none z-50 mt-8 ">
+            <div className="relative my-6 w-11/12 md:w-4/5 m-auto bg-gray-600 ">
               <div className="border-0 rounded-lg shadow-lg relative flex flex-col w-full bg-white outline-none focus:outline-none">
                 <div className="flex justify-between mt-8 px-8 pt-4">
-                  <h2 className="text-3xl font-bold">{data.title}</h2>
-                  <button
+                  <h2 className="text-2xl font-bold">{data.title}</h2>
+                  <img
+                    src={remove}
+                    alt=""
                     onClick={() => setPopup(false)}
                     className="cursor-pointer text-2xl font-semibold text-gray-400 "
-                  >
-                    X
-                  </button>
+                  />
                 </div>
                 <hr />
                 <div className="grid grid-cols-2 gap-6 container py-10 ">
@@ -76,7 +76,7 @@ const Modal = ({ popup, setPopup, data }) => {
                       </div>
                     </div>
                     <p className=" mt-4">Category: {data.category}</p>
-                    <p className="mb-8">Tags: set korte hbe</p>
+                    <p className="mb-8">Tags: {data.tags}</p>
 
                     <div className="flex gap-7 ">
                       <FaFacebookF className="text-3xl bg-[#3B5998] text-white rounded-full p-1" />
@@ -86,7 +86,7 @@ const Modal = ({ popup, setPopup, data }) => {
                     <p className="border-solid border-2 bg-gray-100 my-10"></p>
                     <div>
                       <p>Sold by</p>
-                      <p className="mb-10">e-shop Mall</p>
+                      <p className="mb-10">{data.vendorName}</p>
                     </div>
                   </div>
                 </div>

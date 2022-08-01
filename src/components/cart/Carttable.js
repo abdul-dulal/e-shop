@@ -1,12 +1,11 @@
 import React, { useState } from "react";
 import { toast } from "react-toastify";
 import useCart from "../hooks/useCart";
-const Carttable = ({ info }) => {
+const Carttable = ({ info, total }) => {
   const [increment, setIncrement] = useState(1);
-
   const { img, price, price2, name, _id } = info;
   const { reload } = useCart();
-  const total = increment * price;
+  total = increment * price;
   const removeItems = () => {
     fetch(`http://localhost:4000/delete-cartdata2/${_id}`, {
       method: "DELETE",
@@ -32,17 +31,20 @@ const Carttable = ({ info }) => {
         <td>
           <div className="space-x-4 text-xl font-bold text-[#6B7280] border-2 h-10    w-28  flex items-center justify-center">
             <button
-              disabled={increment <= 1}
               onClick={() => [setIncrement(increment - 1)]}
-              className="cursor-pointer"
+              className={`cursor-pointer  ${
+                increment <= 1 ? "cursor-not-allowed" : ""
+              }`}
             >
               -
             </button>
             <span className="text-xl">{increment}</span>
             <button
               disabled={increment >= 10}
-              onClick={() => setIncrement(increment + 1)}
-              className="cursor-pointer"
+              onClick={() => [setIncrement(increment + 1)]}
+              className={`cursor-pointer ${
+                increment >= 10 ? "cursor-not-allowed" : ""
+              }`}
             >
               +
             </button>

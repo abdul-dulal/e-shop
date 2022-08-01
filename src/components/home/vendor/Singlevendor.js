@@ -17,6 +17,7 @@ const Singlevendor = () => {
       .then((data) => setvendor(data));
   }, [id]);
 
+  console.log(vendor.user);
   const handlecFollower = () => {
     setFollow(follow + 1);
     const newVendor = {
@@ -24,7 +25,7 @@ const Singlevendor = () => {
       follow: follow,
     };
     fetch("http://localhost:4000/followers", {
-      method: "POST", // or 'PUT'
+      method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
@@ -32,7 +33,7 @@ const Singlevendor = () => {
     })
       .then((response) => response.json())
       .then((data) => {
-        console.log("Success:", data);
+        console.log("Success:");
       });
   };
 
@@ -78,8 +79,8 @@ const Singlevendor = () => {
             Product
           </button>
         </div>
-        {profile === "profile" && <Profile category={vendor.category} />}
-        {profile === "product" && <VendorProduct category={vendor.category} />}
+        {profile === "profile" && <Profile user={vendor.user} />}
+        {profile === "product" && <VendorProduct user={vendor.user} />}
       </div>
     </>
   );

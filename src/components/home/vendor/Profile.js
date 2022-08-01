@@ -1,19 +1,8 @@
-import React, { useEffect, useState } from "react";
-import useVendor from "./useVendor";
+import React, { useState } from "react";
+import useVendor from "../../hooks/useVendor";
 
-const Profile = ({ category }) => {
-  const { products } = useVendor(category);
-  // const [reviews, setReviews] = useState([]);
-
-  // useEffect(() => {
-  //   fetch(`http://localhost:4000/get-accessories?category=${category}`)
-  //     .then((res) => res.json())
-  //     .then((data) => {
-  //       setReviews(data);
-  //     });
-  // }, [category]);
-
-  console.log(products);
+const Profile = ({ user }) => {
+  const { products } = useVendor(user);
 
   return (
     <div>

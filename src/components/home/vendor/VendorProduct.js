@@ -1,9 +1,10 @@
 import React from "react";
 import Hover from "../../shere/Hover";
-import useVendor from "./useVendor";
+import useVendor from "../../hooks/useVendor";
 
-const VendorProduct = ({ category }) => {
-  const { products } = useVendor(category);
+const VendorProduct = ({ user }) => {
+  const { products } = useVendor(user);
+  console.log(products);
   return (
     <div>
       <div className="">
@@ -27,69 +28,17 @@ const VendorProduct = ({ category }) => {
                       <p className="line-through">${product.price2}</p>
                     </div>
                     <Hover data={product} />
-
-                    <div className="flex">
-                      <span
-                        class
-                        style={{
-                          position: "relative",
-                          overflow: "hidden",
-                          display: "block",
-                          color: "red",
-                          fontSize: "20px",
-                        }}
-                      >
-                        ★
-                      </span>
-                      <span
-                        class
-                        style={{
-                          position: "relative",
-                          overflow: "hidden",
-                          display: "block",
-                          color: "red",
-                          fontSize: "20px",
-                        }}
-                      >
-                        ★
-                      </span>
-                      <span
-                        class
-                        style={{
-                          position: "relative",
-                          overflow: "hidden",
-                          display: "block",
-                          color: "red",
-                          fontSize: "20px",
-                        }}
-                      >
-                        ★
-                      </span>
-                      <span
-                        class
-                        style={{
-                          position: "relative",
-                          overflow: "hidden",
-                          display: "block",
-                          color: "red",
-                          fontSize: "20px",
-                        }}
-                      >
-                        ★
-                      </span>
-                      <span
-                        class
-                        style={{
-                          position: "relative",
-                          overflow: "hidden",
-                          display: "block",
-                          color: "red",
-                          fontSize: "20px",
-                        }}
-                      >
-                        ★
-                      </span>
-                    </div>
+                    {product.ratting ? (
+                      <div className="mt-3">
+                        <p>{product.ratting == 1 ? "⭐" : ""} </p>
+                        <p>{product.ratting == 2 ? "⭐★" : ""} </p>
+                        <p>{product.ratting == 3 ? "⭐⭐⭐★★" : ""} </p>
+                        <p>{product.ratting == 4 ? "⭐⭐⭐⭐★" : ""} </p>
+                        <p>{product.ratting == 5 ? "⭐⭐⭐⭐⭐" : ""} </p>
+                      </div>
+                    ) : (
+                      <p className="mt-3">★★★★★</p>
+                    )}
                   </div>
                 </div>
               </div>

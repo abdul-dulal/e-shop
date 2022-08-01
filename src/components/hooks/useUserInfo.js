@@ -3,22 +3,21 @@ import { useAuthState } from "react-firebase-hooks/auth";
 import { useQuery } from "react-query";
 import auth from "../../Firebase.init";
 import Loading from "../shere/Loading";
-
-const useWishlist = () => {
+const useUserInfo = () => {
   const [user] = useAuthState(auth);
   const {
     isLoading,
-    data: wishlistInfo,
-    refetch,
-  } = useQuery("repoData", () =>
-    fetch(`http://localhost:4000/get-allWishlistdata?user=${user?.email}`).then(
-      (res) => res.json()
+    data: userInfo,
+    refetch: userRealod,
+  } = useQuery("result", () =>
+    fetch(`http://localhost:4000/get-user/${user?.email}`).then((res) =>
+      res.json()
     )
   );
   if (isLoading) {
     return <Loading />;
   }
-  return { wishlistInfo, refetch };
+  return { userInfo, userRealod };
 };
 
-export default useWishlist;
+export default useUserInfo;

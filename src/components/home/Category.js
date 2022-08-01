@@ -23,7 +23,7 @@ const Category = () => {
             to={"category/eletronic"}
             className="flex border-2 w-64 py-2 px-5 justify-between items-center cursor-pointer"
           >
-            Electronic Accessories{" "}
+            Electronic Accessories
             <img src={eletrocnic} className="w-8" alt="" />
           </Link>
           <Link

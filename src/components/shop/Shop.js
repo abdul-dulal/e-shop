@@ -30,7 +30,6 @@ const Shop = () => {
   const [style, setStyle] = useState("");
   const [toys, setToys] = useState("");
   const [searchTerm, setSearchTerm] = useState(false);
-  const [filter, setFilter] = useState(false);
 
   const [hide, setHide] = useState(false);
   const { data } = useAllprdcut();

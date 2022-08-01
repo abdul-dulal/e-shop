@@ -1,8 +1,13 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import { useAuthState } from "react-firebase-hooks/auth";
+import auth from "../../Firebase.init";
 import useCart from "../hooks/useCart";
+import useUserInfo from "../hooks/useUserInfo";
 import Breadcumb from "../shere/Breadcumb";
 const Checkout = () => {
   const { cartInfo } = useCart();
+  const [user] = useAuthState(auth);
+  const { userInfo } = useUserInfo();
 
   const price = cartInfo?.map((e) => e.price);
   const totalPrice =
@@ -10,6 +15,7 @@ const Checkout = () => {
     price.reduce((x, y) => {
       return x + y;
     });
+
   return (
     <div>
       <Breadcumb tag="Checkout" />
@@ -37,6 +43,7 @@ const Checkout = () => {
               <label className="block">Email</label>
               <input
                 type="text"
+                defaultValue={userInfo ? user?.email : ""}
                 className=" md:w-96 w-full bg-gray-100 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
               />
             </div>
@@ -53,6 +60,7 @@ const Checkout = () => {
               <label className="block">Zip Code</label>
               <input
                 type="text"
+                defaultValue={userInfo ? userInfo.zip : ""}
                 className=" md:w-96 w-full bg-gray-100 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
               />
             </div>
@@ -60,6 +68,7 @@ const Checkout = () => {
               <label className="block">City</label>
               <input
                 type="text"
+                defaultValue={userInfo ? userInfo.city : ""}
                 className=" md:w-96 w-full bg-gray-100 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
               />
             </div>
@@ -69,6 +78,7 @@ const Checkout = () => {
               <label className="block">State</label>
               <input
                 type="text"
+                defaultValue={userInfo ? userInfo.state : ""}
                 className=" md:w-96 w-full bg-gray-100 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
               />
             </div>
@@ -76,6 +86,7 @@ const Checkout = () => {
               <label className="block">Street Address</label>
               <input
                 type="text"
+                defaultValue={userInfo ? userInfo.address : ""}
                 className=" md:w-96 w-full bg-gray-100 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
               />
             </div>
@@ -84,6 +95,7 @@ const Checkout = () => {
             <label className="block">Country</label>
             <input
               type="text"
+              defaultValue={userInfo ? userInfo.country : ""}
               className=" md:w-96 w-full bg-gray-100 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
             />
           </div>
@@ -98,7 +110,7 @@ const Checkout = () => {
             </div>
             <p className="border-solid border-2 border-gray-300 mb-5"></p>
             <div className="">
-              {cartInfo.map((e) => (
+              {cartInfo?.map((e) => (
                 <div className="flex justify-between gap-4 space-y-6">
                   <h2>{e.name}</h2>
                   <p>$ {e.price}</p>
@@ -106,6 +118,7 @@ const Checkout = () => {
               ))}
             </div>
             <p className="border-solid border-2 border-gray-300 my-5"></p>
+
             <div className="flex  justify-between">
               <p className="">Shiping</p>
               <p className=" ">Free Shiping</p>

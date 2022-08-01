@@ -1,8 +1,15 @@
 import React from "react";
 import Breadcumb from "../shere/Breadcumb";
-import { Link, NavLink, Outlet } from "react-router-dom";
+import { NavLink, Outlet } from "react-router-dom";
+import { useAuthState } from "react-firebase-hooks/auth";
+import auth from "../../Firebase.init";
 
+import Logout from "../login/Logout";
+import useUser from "../hooks/useUser";
 const Vendor = () => {
+  const [user] = useAuthState(auth);
+  const { vendor } = useUser(user);
+  console.log(vendor);
   return (
     <div>
       <Breadcumb tag="Myaccount" />
@@ -33,21 +40,13 @@ const Vendor = () => {
                   Prodcuts
                 </NavLink>
               </li>
-              <li className=" hover:bg-purple-600 border border-gray-300   cursor-pointer ">
-                <NavLink
-                  style={({ isActive }) =>
-                    isActive
-                      ? {
-                          color: "#9333EA",
-                        }
-                      : { color: "" }
-                  }
-                  to="/vendor/visit-store"
-                  className=" flex justify-center items-center h-10 w-36 rounded-sm  text-gray-200"
-                >
-                  Visit Store
-                </NavLink>
-              </li>
+              <a
+                href={`/shop/${vendor?._id}`}
+                className=" hover:bg-purple-600 border border-gray-300   cursor-pointer  h-10 w-[152px] flex items-center justify-center rounded-sm text-gray-200 "
+                target="blank"
+              >
+                Visit Store
+              </a>
               <li className=" hover:bg-purple-600 border border-gray-300   cursor-pointer ">
                 <NavLink
                   style={({ isActive }) =>
@@ -63,20 +62,8 @@ const Vendor = () => {
                   Settings
                 </NavLink>
               </li>
-              <li className=" hover:bg-purple-600 border border-gray-300   cursor-pointer ">
-                <NavLink
-                  style={({ isActive }) =>
-                    isActive
-                      ? {
-                          color: "#9333EA",
-                        }
-                      : { color: "" }
-                  }
-                  to="/vendor/logout"
-                  className=" flex justify-center items-center h-10   w-36 rounded-sm text-gray-200"
-                >
-                  Logout
-                </NavLink>
+              <li className=" hover:bg-purple-600 border border-gray-300   cursor-pointer flex justify-center items-center h-10   w-[152px] rounded-sm text-gray-200">
+                <Logout />
               </li>
             </ul>
           </div>

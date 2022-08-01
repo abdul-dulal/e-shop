@@ -1,17 +1,17 @@
 import React, { useEffect, useState } from "react";
 
-const useVendor = () => {
-  const [vendors, setVendors] = useState([]);
+const useVendor = (user) => {
+  const [products, setProduct] = useState([]);
   const [loading, setLoading] = useState(false);
   useEffect(() => {
-    fetch("http://localhost:4000/vendors")
+    fetch(`http://localhost:4000/get-vendorProduct?user=${user}`)
       .then((res) => res.json())
       .then((data) => {
-        setVendors(data);
+        setProduct(data);
         setLoading(true);
       });
-  }, []);
-  return { vendors, loading };
+  }, [user]);
+  return { products, loading };
 };
 
 export default useVendor;
