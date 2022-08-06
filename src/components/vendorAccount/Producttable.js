@@ -13,14 +13,14 @@ const Producttable = ({ product }) => {
   const [user] = useAuthState(auth);
   const { Refetch } = useUploadproduct(user);
   const handleEdit = () => {
-    fetch(`http://localhost:4000/edit-product/${_id}`)
+    fetch(`http://localhost:3000/edit-product/${_id}`)
       .then((res) => res.json())
       .then((data) => setEditproduct(data));
     setPopup(true);
   };
 
   const handleRemove = () => {
-    fetch(`http://localhost:4000/delete-product/${_id}`, {
+    fetch(`http://localhost:3000/delete-product/${_id}`, {
       method: "DELETE",
     })
       .then((res) => {

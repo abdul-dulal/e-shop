@@ -7,7 +7,7 @@ const Toprated = () => {
   const [products, setproduct] = useState([]);
   const [loading, setLoading] = useState(false);
   useEffect(() => {
-    fetch("http://localhost:4000/get-bestSelling?highlights=top")
+    fetch("http://localhost:3000/get-bestSelling?highlights=top")
       .then((res) => res.json())
       .then((data) => {
         setproduct(data);

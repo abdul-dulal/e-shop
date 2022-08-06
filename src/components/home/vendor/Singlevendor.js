@@ -18,7 +18,7 @@ const Singlevendor = () => {
   const handlecFollower = () => {
     const newFollower = parseFloat(follower) + 1;
     const updateFollwer = { follower: newFollower };
-    fetch(`http://localhost:4000/followers/${followers?._id}`, {
+    fetch(`http://localhost:3000/followers/${followers?._id}`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
@@ -36,7 +36,7 @@ const Singlevendor = () => {
   const handleunfollow = () => {
     const newFollower = parseFloat(follower) - 1;
     const updateFollwer = { follower: newFollower };
-    fetch(`http://localhost:4000/followers/${followers?._id}`, {
+    fetch(`http://localhost:3000/followers/${followers?._id}`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",

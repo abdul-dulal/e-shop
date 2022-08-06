@@ -4,7 +4,7 @@ const useVendor = (user) => {
   const [products, setProduct] = useState([]);
   const [loading, setLoading] = useState(false);
   useEffect(() => {
-    fetch(`http://localhost:4000/get-vendorProduct?user=${user}`)
+    fetch(`http://localhost:3000/get-vendorProduct?user=${user}`)
       .then((res) => res.json())
       .then((data) => {
         setProduct(data);

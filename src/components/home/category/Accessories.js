@@ -10,7 +10,7 @@ const Accessories = () => {
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
-    fetch("http://localhost:4000/get-accessories?category=accessories")
+    fetch("http://localhost:3000/get-accessories?category=accessories")
       .then((res) => res.json())
       .then((data) => {
         setAccessories(data);

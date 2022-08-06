@@ -37,7 +37,7 @@ const Hover = ({ data }) => {
       reviewName: data.reviewName,
       user: user.email,
     };
-    fetch("http://localhost:4000/post-wishlist", {
+    fetch("http://localhost:3000/post-wishlist", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -71,7 +71,7 @@ const Hover = ({ data }) => {
       tags: data.tags,
       vendorName: data.vendorName,
     };
-    fetch("http://localhost:4000/post-cart", {
+    fetch("http://localhost:3000/post-cart", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

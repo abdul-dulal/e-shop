@@ -8,7 +8,7 @@ const WishlistTable = ({ data, refetch }) => {
   const navigate = useNavigate();
 
   const removeItems = () => {
-    fetch(`http://localhost:4000/delete-items/${_id}`, {
+    fetch(`http://localhost:3000/delete-items/${_id}`, {
       method: "DELETE",
     })
       .then((res) => res.json())

@@ -6,7 +6,7 @@ const WomenFashion = () => {
   const [wFashion, setwFashion] = useState([]);
   const [loading, setLoading] = useState(false);
   useEffect(() => {
-    fetch(`http://localhost:4000/get-womenfashion?category=women`)
+    fetch(`http://localhost:3000/get-womenfashion?category=women`)
       .then((res) => res.json())
       .then((data) => {
         setwFashion(data);

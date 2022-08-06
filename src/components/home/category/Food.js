@@ -8,7 +8,7 @@ const Food = () => {
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
-    fetch("http://localhost:4000/get-food?category=food")
+    fetch("http://localhost:3000/get-food?category=food")
       .then((res) => res.json())
       .then((data) => {
         setFood(data);

@@ -37,7 +37,7 @@ const Register = () => {
         user: data.email,
         name: data.store,
       };
-      fetch("http://localhost:4000/customer", {
+      fetch("http://localhost:3000/customer", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

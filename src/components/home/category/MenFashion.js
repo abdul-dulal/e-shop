@@ -9,7 +9,7 @@ const MenFashion = () => {
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
-    fetch("http://localhost:4000/get-mensFashion?category=men")
+    fetch("http://localhost:3000/get-mensFashion?category=men")
       .then((res) => res.json())
       .then((data) => {
         setwFashion(data);

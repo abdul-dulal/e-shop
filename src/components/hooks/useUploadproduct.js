@@ -7,7 +7,7 @@ const useUploadproduct = (user) => {
     data: product,
     refetch: Refetch,
   } = useQuery("productdemo", () =>
-    fetch(`http://localhost:4000/get-uploadProduct?user=${user?.email}`).then(
+    fetch(`http://localhost:3000/get-uploadProduct?user=${user?.email}`).then(
       (res) => res.json()
     )
   );

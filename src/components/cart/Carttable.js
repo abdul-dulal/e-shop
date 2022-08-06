@@ -7,7 +7,7 @@ const Carttable = ({ info, total }) => {
   const { reload } = useCart();
   total = increment * price;
   const removeItems = () => {
-    fetch(`http://localhost:4000/delete-cartdata2/${_id}`, {
+    fetch(`http://localhost:3000/delete-cartdata2/${_id}`, {
       method: "DELETE",
     })
       .then((res) => res.json())

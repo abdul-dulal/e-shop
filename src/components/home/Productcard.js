@@ -9,7 +9,7 @@ const Productcard = () => {
   const [loading, setLoading] = useState(false);
   const { reviews } = useReviews();
   useEffect(() => {
-    fetch("http://localhost:4000/get-bestSelling?highlights=best")
+    fetch("http://localhost:3000/get-bestSelling?highlights=best")
       .then((res) => res.json())
       .then((data) => {
         setproduct(data);

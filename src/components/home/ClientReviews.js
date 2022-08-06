@@ -16,7 +16,7 @@ const ClientReviews = () => {
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
-    fetch("http://localhost:4000/client-Review")
+    fetch("http://localhost:3000/client-Review")
       .then((res) => res.json())
       .then((data) => {
         setReview(data);

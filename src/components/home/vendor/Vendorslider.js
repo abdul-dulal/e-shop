@@ -14,7 +14,7 @@ const Vendorslider = () => {
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
   useEffect(() => {
-    fetch("http://localhost:4000/vendors")
+    fetch("http://localhost:3000/vendors")
       .then((res) => res.json())
       .then((data) => {
         setVendors(data);

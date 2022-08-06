@@ -11,7 +11,7 @@ const useWishlist = () => {
     data: wishlistInfo,
     refetch,
   } = useQuery("repoData", () =>
-    fetch(`http://localhost:4000/get-allWishlistdata?user=${user?.email}`).then(
+    fetch(`http://localhost:3000/get-allWishlistdata?user=${user?.email}`).then(
       (res) => res.json()
     )
   );

@@ -23,7 +23,7 @@ const Address = () => {
       city: data.city,
       user: user?.email,
     };
-    fetch("http://localhost:4000/post-userInfo", {
+    fetch("http://localhost:3000/post-userInfo", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

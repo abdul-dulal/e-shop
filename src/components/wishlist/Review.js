@@ -8,7 +8,7 @@ const Review = ({ review }) => {
   const [clientReview, setClientReview] = useState();
   const stars = Array(5).fill(0);
 
-  const url = `http://localhost:4000/vendorName?vendorName=${review.reviewName}`;
+  const url = `http://localhost:3000/vendorName?vendorName=${review.reviewName}`;
   console.log(url);
   useEffect(() => {
     fetch(url)

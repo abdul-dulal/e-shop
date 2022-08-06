@@ -11,7 +11,7 @@ const WishlistData = () => {
     data: cartInfo,
     refetch: reload,
   } = useQuery("demo", () =>
-    fetch(`http://localhost:4000/get-allcart?user=${user?.email}`).then((res) =>
+    fetch(`http://localhost:3000/get-allcart?user=${user?.email}`).then((res) =>
       res.json()
     )
   );

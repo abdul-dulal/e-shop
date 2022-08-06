@@ -24,7 +24,7 @@ const Details = () => {
   const lkShare = "https://www.linkedin.com/feed/";
 
   useEffect(() => {
-    fetch(`http://localhost:4000/cart-details/${id}`)
+    fetch(`http://localhost:3000/cart-details/${id}`)
       .then((res) => res.json())
       .then((data) => setData(data[0]));
   }, [id]);

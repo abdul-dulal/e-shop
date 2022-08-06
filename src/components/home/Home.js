@@ -10,7 +10,7 @@ import Vendorslider from "./vendor/Vendorslider";
 const Home = () => {
   return (
     <div>
-      {/* <Slider /> */}
+      <Slider />
       <Service />
       <Category />
       <Products />

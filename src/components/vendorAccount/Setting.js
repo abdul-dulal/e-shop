@@ -10,7 +10,7 @@ const Setting = () => {
   const [user] = useAuthState(auth);
   const [storeName, setStoreName] = useState();
   useEffect(() => {
-    fetch(`http://localhost:4000/get-vendorByUser/${user?.email}`)
+    fetch(`http://localhost:3000/get-vendorByUser/${user?.email}`)
       .then((res) => res.json())
       .then((data) => setStoreName(data));
   }, [user?.email]);
@@ -34,7 +34,7 @@ const Setting = () => {
             name: data.store,
           };
 
-          fetch(`http://localhost:4000/update-vendorInfo/${storeName._id}`, {
+          fetch(`http://localhost:3000/update-vendorInfo/${storeName._id}`, {
             method: "PUT",
             headers: {
               "Content-Type": "application/json",

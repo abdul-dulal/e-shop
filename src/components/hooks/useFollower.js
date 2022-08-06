@@ -8,7 +8,7 @@ const useFollower = (id) => {
     data: followers,
     refetch: followerRefetch,
   } = useQuery("productdemo", () =>
-    fetch(`http://localhost:4000/vendor/${id}`).then((res) => res.json())
+    fetch(`http://localhost:3000/vendor/${id}`).then((res) => res.json())
   );
   if (isLoading) {
     return <Loading />;

@@ -50,7 +50,7 @@ const AddProduct = ({ popup, setPopup, editProduct, title }) => {
             price: data.regular,
             price2: data.sale,
           };
-          fetch("http://localhost:4000/post-product", {
+          fetch("http://localhost:3000/post-product", {
             method: "POST",
             headers: {
               "Content-Type": "application/json",

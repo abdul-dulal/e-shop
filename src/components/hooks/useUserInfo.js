@@ -10,7 +10,7 @@ const useUserInfo = () => {
     data: userInfo,
     refetch: userRealod,
   } = useQuery("result", () =>
-    fetch(`http://localhost:4000/get-user/${user?.email}`).then((res) =>
+    fetch(`http://localhost:3000/get-user/${user?.email}`).then((res) =>
       res.json()
     )
   );

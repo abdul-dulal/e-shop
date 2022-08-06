@@ -8,7 +8,7 @@ const Electical = () => {
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
-    fetch(`http://localhost:4000/get-electronic?category=electronic`)
+    fetch(`http://localhost:3000/get-electronic?category=electronic`)
       .then((res) => res.json())
       .then((data) => {
         setEletronic(data);

@@ -8,7 +8,7 @@ const Dashborad = () => {
   const [user] = useAuthState(auth);
   const navigate = useNavigate();
   useEffect(() => {
-    fetch(`http://localhost:4000/collectVendor/${user?.email}`)
+    fetch(`http://localhost:3000/collectVendor/${user?.email}`)
       .then((res) => res.json())
       .then((data) => setVendor(data));
   }, [user?.email]);
