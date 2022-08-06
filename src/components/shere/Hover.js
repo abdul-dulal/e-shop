@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import view from "../../assets/icon/view.png";
 import wishlist from "../../assets/icon/wishlist.png";
 import cart from "../../assets/icon/cart.png";
@@ -9,15 +9,20 @@ import useWishlist from "../hooks/useWishlist";
 import useCart from "../hooks/useCart";
 import { useAuthState } from "react-firebase-hooks/auth";
 import auth from "../../Firebase.init";
+import { useNavigate } from "react-router-dom";
 
 const Hover = ({ data }) => {
   const [popup, setPopup] = useState(false);
-  const { wishlistInfo, refetch } = useWishlist();
-  const { cartInfo, reload } = useCart();
+  const { refetch } = useWishlist();
+  const { reload } = useCart();
 
   const [user] = useAuthState(auth);
+  const navigate = useNavigate();
 
   const handleWishlit = () => {
+    if (!user) {
+      navigate("/login");
+    }
     const productDeatils = {
       name: data?.title,
       img: data.img,
@@ -53,6 +58,10 @@ const Hover = ({ data }) => {
   };
 
   const handleCart = () => {
+    if (!user) {
+      navigate("/login");
+    }
+
     const newCart = {
       user: user.email,
       name: data.title,

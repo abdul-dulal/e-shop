@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Hover from "../shere/Hover";
 import Loading from "../shere/Loading";
+import Rattings from "../shere/Rattings";
 
 const Newarrival = () => {
   const [products, setproduct] = useState([]);
@@ -13,6 +14,7 @@ const Newarrival = () => {
         setLoading(true);
       });
   }, []);
+
   return (
     <div>
       {loading ? (
@@ -37,13 +39,7 @@ const Newarrival = () => {
                     </div>
                     <Hover data={product} />
                     {product.ratting ? (
-                      <div className="mt-3">
-                        <p>{product.ratting == 1 ? "⭐" : ""} </p>
-                        <p>{product.ratting == 2 ? "⭐★" : ""} </p>
-                        <p>{product.ratting == 3 ? "⭐⭐⭐★★" : ""} </p>
-                        <p>{product.ratting == 4 ? "⭐⭐⭐⭐★" : ""} </p>
-                        <p>{product.ratting == 5 ? "⭐⭐⭐⭐⭐" : ""} </p>
-                      </div>
+                      <Rattings ratting={product.ratting} />
                     ) : (
                       <p className="mt-3">★★★★★</p>
                     )}

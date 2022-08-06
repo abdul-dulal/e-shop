@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Hover from "../shere/Hover";
 import Loading from "../shere/Loading";
+import Rattings from "../shere/Rattings";
 
 const Moreproduct = ({ category }) => {
   const [moreProduct, setMorePorduct] = useState([]);
@@ -38,15 +39,8 @@ const Moreproduct = ({ category }) => {
                           <p className="line-through">${e.price2}</p>
                         </div>
                         <Hover data={e} />
-
                         {e.ratting ? (
-                          <div className="mt-3">
-                            <p>{e.ratting == 1 ? "⭐" : ""} </p>
-                            <p>{e.ratting == 2 ? "⭐★" : ""} </p>
-                            <p>{e.ratting == 3 ? "⭐⭐⭐★★" : ""} </p>
-                            <p>{e.ratting == 4 ? "⭐⭐⭐⭐★" : ""} </p>
-                            <p>{e.ratting == 5 ? "⭐⭐⭐⭐⭐" : ""} </p>
-                          </div>
+                          <Rattings ratting={e.ratting} />
                         ) : (
                           <p className="mt-3">★★★★★</p>
                         )}

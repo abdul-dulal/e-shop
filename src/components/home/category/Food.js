@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Hover from "../../shere/Hover";
 import Loading from "../../shere/Loading";
+import Rattings from "../../shere/Rattings";
 
 const Food = () => {
   const [foods, setFood] = useState([]);
@@ -37,68 +38,11 @@ const Food = () => {
                       <p className="line-through">${food.price2}</p>
                     </div>
                     <Hover id={food._id} />
-                    <div className="flex">
-                      <span
-                        class
-                        style={{
-                          position: "relative",
-                          overflow: "hidden",
-                          display: "block",
-                          color: "red",
-                          fontSize: "20px",
-                        }}
-                      >
-                        ★
-                      </span>
-                      <span
-                        class
-                        style={{
-                          position: "relative",
-                          overflow: "hidden",
-                          display: "block",
-                          color: "red",
-                          fontSize: "20px",
-                        }}
-                      >
-                        ★
-                      </span>
-                      <span
-                        class
-                        style={{
-                          position: "relative",
-                          overflow: "hidden",
-                          display: "block",
-                          color: "red",
-                          fontSize: "20px",
-                        }}
-                      >
-                        ★
-                      </span>
-                      <span
-                        class
-                        style={{
-                          position: "relative",
-                          overflow: "hidden",
-                          display: "block",
-                          color: "red",
-                          fontSize: "20px",
-                        }}
-                      >
-                        ★
-                      </span>
-                      <span
-                        class
-                        style={{
-                          position: "relative",
-                          overflow: "hidden",
-                          display: "block",
-                          color: "red",
-                          fontSize: "20px",
-                        }}
-                      >
-                        ★
-                      </span>
-                    </div>
+                    {food.ratting ? (
+                      <Rattings ratting={food.ratting} />
+                    ) : (
+                      <p className="mt-3">★★★★★</p>
+                    )}
                   </div>
                 </div>
               </div>

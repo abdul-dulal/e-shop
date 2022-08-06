@@ -3,38 +3,52 @@ import { useParams } from "react-router-dom";
 import Breadcumb from "../../shere/Breadcumb";
 import { RiChatFollowUpFill } from "react-icons/ri";
 import Profile from "./Profile";
+import { toast } from "react-toastify";
+import { GrCheckmark } from "react-icons/gr";
 
 import VendorProduct from "./VendorProduct";
+import useFollower from "../../hooks/useFollower";
 const Singlevendor = () => {
-  const [vendor, setvendor] = useState([]);
   const [profile, setprofile] = useState("profile");
-  const [follow, setFollow] = useState(0);
+  const [follow, setFollow] = useState(false);
   const { id } = useParams();
-
-  useEffect(() => {
-    fetch(`http://localhost:4000/vendor/${id}`)
-      .then((res) => res.json())
-      .then((data) => setvendor(data));
-  }, [id]);
-
-  console.log(vendor.user);
+  console.log(follow);
+  const { followers, followerRefetch } = useFollower(id);
+  let follower = followers?.follower;
   const handlecFollower = () => {
-    setFollow(follow + 1);
-    const newVendor = {
-      vendor: vendor.name,
-      follow: follow,
-    };
-    fetch("http://localhost:4000/followers", {
-      method: "POST",
+    const newFollower = parseFloat(follower) + 1;
+    const updateFollwer = { follower: newFollower };
+    fetch(`http://localhost:4000/followers/${followers?._id}`, {
+      method: "PUT",
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify(newVendor),
+      body: JSON.stringify(updateFollwer),
     })
       .then((response) => response.json())
       .then((data) => {
-        console.log("Success:");
+        followerRefetch();
+        toast("following");
       });
+    setFollow(!follow);
+  };
+
+  const handleunfollow = () => {
+    const newFollower = parseFloat(follower) - 1;
+    const updateFollwer = { follower: newFollower };
+    fetch(`http://localhost:4000/followers/${followers?._id}`, {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(updateFollwer),
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        followerRefetch();
+        toast("UnFollow");
+      });
+    setFollow(!follow);
   };
 
   return (
@@ -43,21 +57,33 @@ const Singlevendor = () => {
       <div className="container">
         <div className="flex justify-between container mt-10 border-2 p-2">
           <div>
-            <img src={vendor.img} className="w-24 h-24 border-2 p-2" alt="" />
+            <img
+              src={followers?.img}
+              className="w-24 h-24 border-2 p-2"
+              alt=""
+            />
           </div>
           <div>
-            <h2 className="text-xl font-semibold">{vendor.name}</h2>
-            <p>followers 1</p>
+            <h2 className="text-xl font-semibold">{followers?.name}</h2>
+            <p>
+              <span>{followers?.follower}</span>
+            </p>
           </div>
           <div>
-            <div
-              className="h-24 w-24 border-2 p-2 block cursor-pointer "
-              onClick={handlecFollower}
-            >
-              <span>
-                <RiChatFollowUpFill className="text-3xl" />{" "}
-                <span className="text-xl ">Follows</span>
-              </span>
+            <div className="h-24 w-24 border-2 p-2 block cursor-pointer ">
+              {follow ? (
+                <p onClick={handleunfollow}>
+                  <GrCheckmark className="text-xl font-bold" />
+                  <p className="text-md mt-3 font-semibold text-purple-600">
+                    Following
+                  </p>
+                </p>
+              ) : (
+                <span className=" text-[#EF4444]" onClick={handlecFollower}>
+                  <RiChatFollowUpFill className="text-3xl" />
+                  <span className="text-xl ">Follows</span>
+                </span>
+              )}
             </div>
           </div>
         </div>
@@ -79,8 +105,8 @@ const Singlevendor = () => {
             Product
           </button>
         </div>
-        {profile === "profile" && <Profile user={vendor.user} />}
-        {profile === "product" && <VendorProduct user={vendor.user} />}
+        {profile === "profile" && <Profile user={followers?.user} />}
+        {profile === "product" && <VendorProduct user={followers?.user} />}
       </div>
     </>
   );

@@ -20,6 +20,7 @@ import Setting from "./components/vendorAccount/Setting";
 import VendorLogut from "./components/vendorAccount/VendorLogut";
 import VendorDashboard from "./components/vendorAccount/VendorDashboard";
 import PrivateRoute from "./components/routes/PrivateRoute";
+import Payment from "./components/shere/Payment";
 
 // import Vendor from "./components/home/vendor/Vendorslider";
 // import Vendorslider from "./components/home/vendor/Vendorslider";
@@ -57,7 +58,7 @@ function App() {
           <Route path="settings" element={<Setting />} />
           <Route path="logout" element={<VendorLogut />} />
         </Route>
-        {/* <Route path="/vendor" element={<Vendorslider />} /> */}
+        <Route path="checkout-method" element={<Payment />} />
       </Routes>
       <Footer />
       <ToastContainer

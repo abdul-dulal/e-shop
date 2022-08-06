@@ -37,7 +37,7 @@ const Cartmodal = ({ cartmodal }) => {
                 No items added to cart
               </h2>
             )}
-            {price.length > 0 && (
+            {price?.length > 0 && (
               <div className="px-6 py-12">
                 <button
                   onClick={() => navigate("/cart")}

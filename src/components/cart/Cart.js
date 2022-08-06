@@ -8,7 +8,6 @@ const Cart = () => {
   const { cartInfo, refetch } = useCart();
   const navigate = useNavigate();
   let total = 0;
-  console.log(total);
 
   return (
     <div>

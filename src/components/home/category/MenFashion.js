@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 
 import Hover from "../../shere/Hover";
 import Loading from "../../shere/Loading";
+import Rattings from "../../shere/Rattings";
 
 const MenFashion = () => {
   const [fashions, setwFashion] = useState([]);
@@ -38,68 +39,11 @@ const MenFashion = () => {
                       <p className="line-through">${fashion.price2}</p>
                     </div>
                     <Hover data={fashion} />
-                    <div className="flex">
-                      <span
-                        class
-                        style={{
-                          position: "relative",
-                          overflow: "hidden",
-                          display: "block",
-                          color: "red",
-                          fontSize: "20px",
-                        }}
-                      >
-                        ★
-                      </span>
-                      <span
-                        class
-                        style={{
-                          position: "relative",
-                          overflow: "hidden",
-                          display: "block",
-                          color: "red",
-                          fontSize: "20px",
-                        }}
-                      >
-                        ★
-                      </span>
-                      <span
-                        class
-                        style={{
-                          position: "relative",
-                          overflow: "hidden",
-                          display: "block",
-                          color: "red",
-                          fontSize: "20px",
-                        }}
-                      >
-                        ★
-                      </span>
-                      <span
-                        class
-                        style={{
-                          position: "relative",
-                          overflow: "hidden",
-                          display: "block",
-                          color: "red",
-                          fontSize: "20px",
-                        }}
-                      >
-                        ★
-                      </span>
-                      <span
-                        class
-                        style={{
-                          position: "relative",
-                          overflow: "hidden",
-                          display: "block",
-                          color: "red",
-                          fontSize: "20px",
-                        }}
-                      >
-                        ★
-                      </span>
-                    </div>
+                    {fashion.ratting ? (
+                      <Rattings ratting={fashion.ratting} />
+                    ) : (
+                      <p className="mt-3">★★★★★</p>
+                    )}
                   </div>
                 </div>
               </div>

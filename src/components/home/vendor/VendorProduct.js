@@ -1,10 +1,11 @@
 import React from "react";
 import Hover from "../../shere/Hover";
 import useVendor from "../../hooks/useVendor";
+import Rattings from "../../shere/Rattings";
 
 const VendorProduct = ({ user }) => {
   const { products } = useVendor(user);
-  console.log(products);
+
   return (
     <div>
       <div className="">
@@ -29,13 +30,7 @@ const VendorProduct = ({ user }) => {
                     </div>
                     <Hover data={product} />
                     {product.ratting ? (
-                      <div className="mt-3">
-                        <p>{product.ratting == 1 ? "⭐" : ""} </p>
-                        <p>{product.ratting == 2 ? "⭐★" : ""} </p>
-                        <p>{product.ratting == 3 ? "⭐⭐⭐★★" : ""} </p>
-                        <p>{product.ratting == 4 ? "⭐⭐⭐⭐★" : ""} </p>
-                        <p>{product.ratting == 5 ? "⭐⭐⭐⭐⭐" : ""} </p>
-                      </div>
+                      <Rattings ratting={product.ratting} />
                     ) : (
                       <p className="mt-3">★★★★★</p>
                     )}

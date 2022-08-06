@@ -6,11 +6,22 @@ import { ImLinkedin2 } from "react-icons/im";
 import cart from "../../assets/icon/wishlist.png";
 import VendorInfo from "./VendorInfo";
 import Breadcumb from "../shere/Breadcumb";
+import {
+  FacebookIcon,
+  FacebookShareButton,
+  TwitterShareButton,
+  LineShareButton,
+  LinkedinIcon,
+  TwitterIcon,
+} from "react-share";
 const Details = () => {
   const [data, setData] = useState([]);
 
   const [increment, setIncrement] = useState(1);
   const { id } = useParams();
+  const fbShare = "https://www.facebook.com/";
+  const twShare = "https://twitter.com/";
+  const lkShare = "https://www.linkedin.com/feed/";
 
   useEffect(() => {
     fetch(`http://localhost:4000/cart-details/${id}`)
@@ -75,9 +86,15 @@ const Details = () => {
           </p>
 
           <div className="flex gap-7 ">
-            <FaFacebookF className="text-3xl bg-[#3B5998] text-white rounded-full p-1" />
-            <AiOutlineTwitter className="text-3xl bg-[#00ACED] text-white rounded-full p-1" />
-            <ImLinkedin2 className="text-3xl bg-[#007FB1] text-white rounded-full p-1" />
+            <FacebookShareButton url={fbShare}>
+              <FacebookIcon size={32} round={true} />
+            </FacebookShareButton>
+            <TwitterShareButton url={twShare}>
+              <TwitterIcon size={32} round={true} />
+            </TwitterShareButton>
+            <LineShareButton url={lkShare}>
+              <LinkedinIcon size={32} round={true} />
+            </LineShareButton>
           </div>
           <p className="border-solid border-2 bg-gray-100 my-10"></p>
           <div>

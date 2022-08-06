@@ -6,12 +6,12 @@ import WishlistTable from "./WishlistTable";
 
 const Wishlist = () => {
   const { wishlistInfo, refetch } = useCart();
-  console.log(wishlistInfo);
+
   return (
     <div>
       <Breadcumb tag="Wishlist" />
       <div class="overflow-x-auto container mt-6">
-        {wishlistInfo.length > 0 ? (
+        {wishlistInfo?.length > 0 ? (
           <table class="table w-full">
             <thead>
               <tr className=" ">

@@ -4,9 +4,19 @@ import { FaFacebookF } from "react-icons/fa";
 import { AiOutlineTwitter } from "react-icons/ai";
 import { ImLinkedin2 } from "react-icons/im";
 import remove from "../../assets/icon/delete.png";
+import {
+  FacebookIcon,
+  FacebookShareButton,
+  TwitterShareButton,
+  LineShareButton,
+  LinkedinIcon,
+  TwitterIcon,
+} from "react-share";
 const Modal = ({ popup, setPopup, data }) => {
   const [increment, setIncrement] = useState(1);
-
+  const fbShare = "https://www.facebook.com/";
+  const twShare = "https://twitter.com/";
+  const lkShare = "https://www.linkedin.com/feed/";
   return (
     <div>
       {popup ? (
@@ -79,9 +89,15 @@ const Modal = ({ popup, setPopup, data }) => {
                     <p className="mb-8">Tags: {data.tags}</p>
 
                     <div className="flex gap-7 ">
-                      <FaFacebookF className="text-3xl bg-[#3B5998] text-white rounded-full p-1" />
-                      <AiOutlineTwitter className="text-3xl bg-[#00ACED] text-white rounded-full p-1" />
-                      <ImLinkedin2 className="text-3xl bg-[#007FB1] text-white rounded-full p-1" />
+                      <FacebookShareButton url={fbShare}>
+                        <FacebookIcon size={32} round={true} />
+                      </FacebookShareButton>
+                      <TwitterShareButton url={twShare}>
+                        <TwitterIcon size={32} round={true} />
+                      </TwitterShareButton>
+                      <LineShareButton url={lkShare}>
+                        <LinkedinIcon size={32} round={true} />
+                      </LineShareButton>
                     </div>
                     <p className="border-solid border-2 bg-gray-100 my-10"></p>
                     <div>

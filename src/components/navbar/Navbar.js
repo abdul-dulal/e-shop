@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { NavLink, Link } from "react-router-dom";
 import wishlist from "../../assets/icon/wishlist.png";
 import cart from "../../assets/icon/cart.png";
@@ -21,6 +21,18 @@ const Navbar = () => {
   const handleHide = () => {
     setHide(!hide);
   };
+
+  // useEffect(() => {
+  //   const closeModal = (e) => {
+  //     if (e.path[0].tagName !== "BUTTON") {
+  //       setCartmodal(false);
+  //     }
+  //   };
+  //   document.addEventListener("click", closeModal);
+  //   return () => {
+  //     document.removeEventListener("click", closeModal);
+  //   };
+  // }, []);
 
   return (
     <nav>

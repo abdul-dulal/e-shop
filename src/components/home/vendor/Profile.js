@@ -1,9 +1,9 @@
-import React, { useState } from "react";
+import React from "react";
 import useVendor from "../../hooks/useVendor";
+import Rattings from "../../shere/Rattings";
 
 const Profile = ({ user }) => {
   const { products } = useVendor(user);
-
   return (
     <div>
       <div className="container flex justify-between flex-wrap mt-10 gap-10">
@@ -32,8 +32,28 @@ const Profile = ({ user }) => {
         <h2 className="text-2xl font-semibold">Product Ratting and Reviews</h2>
         {products.map((e) => (
           <div>
-            <img src={e.reviewImg} alt="" />
-            <p>{e.review}</p>
+            {e.review && (
+              <div className="flex gap-20 mt-5 border-2 p-4">
+                <div>
+                  <img
+                    src={e.reviewImg}
+                    className="h-20 w-20 rounded-full"
+                    alt=""
+                  />
+                  <p className="mt-3 ml-3">{e.reviewName}</p>
+                </div>
+                <div>
+                  <div className="flex gap-4">
+                    <img src={e.img} className="h-32 w-32" alt="" />
+                    <span className="mt-5">{e.title}</span>
+                  </div>
+                  <div className="">
+                    <Rattings ratting={e.ratting} /> <br />
+                    <span className="ml-[-60px]">{e.review}</span>
+                  </div>
+                </div>
+              </div>
+            )}
           </div>
         ))}
       </div>
